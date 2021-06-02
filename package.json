@@ -1,0 +1,24 @@
+{
+  "name": "gysr-docs",
+  "version": "1.0.0",
+  "description": "Documentation for GYSR core contracts",
+  "main": "index.js",
+  "scripts": {
+    "docgen": "solidity-docgen --solc-module solc-0.8 --templates templates --input ../core-dev/contracts --output docs/contracts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gysr-io/docs.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gysr-io/docs/issues"
+  },
+  "homepage": "https://github.com/gysr-io/docs",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.1.0",
+    "solc-0.8": "npm:solc@^0.8.4",
+    "solidity-docgen": "^0.5.13"
+  }
+}

@@ -1,0 +1,62 @@
+---
+layout: page
+title: {{name}}
+description: "{{natspec.userdoc}}"
+permalink: /docs/{{name}}/
+exclude: true
+categories: [contract]
+---
+
+### {{natspec.title}}
+
+`{{name}}`
+
+{{{natspec.userdoc}}}
+
+{{{natspec.devdoc}}}
+
+{{#each ownModifiers}}
+
+****
+
+`{{name}}({{args}})`
+
+{{{natspec.userdoc}}}
+
+{{{natspec.devdoc}}}
+
+{{/each}}
+
+{{#each ownFunctions}}
+
+****
+
+`{{name}}({{args}}){{#if outputs}} → {{outputs}}{{/if}}` ({{visibility}})
+
+{{{natspec.userdoc}}}
+
+{{{natspec.devdoc}}}
+
+**Parameters**  
+{{#each natspec.params}}
+- `{{param}}`: {{description}}
+{{/each}}
+
+**Returns**
+{{#each natspec.returns}}
+- {{param}} {{description}}
+{{/each}}
+
+{{/each}}
+
+{{#each ownEvents}}
+
+****
+
+`{{name}}({{args}})`
+
+{{{natspec.userdoc}}}
+
+{{{natspec.devdoc}}}
+
+{{/each}}
