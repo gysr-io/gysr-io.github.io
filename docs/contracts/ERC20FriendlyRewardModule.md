@@ -1,7 +1,7 @@
 ---
 layout: page
 title: ERC20FriendlyRewardModule
-description: "this module distributes a single ERC20 token as a staking reward.
+description: "this reward module distributes a single ERC20 token as the staking reward.
 It is designed to offer simple and predictable reward mechanics.
 
 "
@@ -16,7 +16,7 @@ categories: [contract]
 
 `ERC20FriendlyRewardModule`
 
-this module distributes a single ERC20 token as a staking reward.
+this reward module distributes a single ERC20 token as the staking reward.
 It is designed to offer simple and predictable reward mechanics.
 
 
@@ -50,7 +50,7 @@ staking to receive a multiplier on their earning rate.
 
 ****
 
-`tokens() → address[]` (external)
+`tokens() → address[] tokens_` (external)
 
 
 
@@ -78,7 +78,7 @@ staking to receive a multiplier on their earning rate.
 
 ****
 
-`balances() → uint256[]` (external)
+`balances() → uint256[] balances_` (external)
 
 
 
@@ -204,7 +204,7 @@ internal implementation of unstake
 
 ****
 
-`claim(address account, address user, uint256 shares, bytes data) → uint256, uint256` (external)
+`claim(address account, address user, uint256 shares, bytes data) → uint256 spent, uint256 vested` (external)
 
 reward user and perform and necessary accounting for existing stake
 

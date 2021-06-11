@@ -1,7 +1,7 @@
 ---
 layout: page
 title: ERC20CompetitiveRewardModule
-description: "this module distributes a single ERC20 token as a staking reward.
+description: "this reward module distributes a single ERC20 token as the staking reward.
 It is designed to offer competitive and engaging reward mechanics.
 
 "
@@ -16,7 +16,7 @@ categories: [contract]
 
 `ERC20CompetitiveRewardModule`
 
-this module distributes a single ERC20 token as a staking reward.
+this reward module distributes a single ERC20 token as the staking reward.
 It is designed to offer competitive and engaging reward mechanics.
 
 
@@ -54,7 +54,7 @@ h/t https://github.com/ampleforth/token-geyser
 
 ****
 
-`tokens() → address[]` (external)
+`tokens() → address[] tokens_` (external)
 
 
 
@@ -68,7 +68,7 @@ h/t https://github.com/ampleforth/token-geyser
 
 ****
 
-`balances() → uint256[]` (public)
+`balances() → uint256[] balances_` (external)
 
 
 
@@ -160,7 +160,7 @@ reward user and perform any necessary accounting for unstake
 
 ****
 
-`claim(address account, address user, uint256 shares, bytes data) → uint256, uint256` (external)
+`claim(address account, address user, uint256 shares, bytes data) → uint256 spent, uint256 vested` (external)
 
 reward user and perform and necessary accounting for existing stake
 

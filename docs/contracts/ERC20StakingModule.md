@@ -39,7 +39,7 @@ unstakes, these shares will be burned and a reward will be distributed.
 
 ****
 
-`tokens() → address[]` (external)
+`tokens() → address[] tokens_` (external)
 
 
 
@@ -53,7 +53,7 @@ unstakes, these shares will be burned and a reward will be distributed.
 
 ****
 
-`balances(address user) → uint256[]` (external)
+`balances(address user) → uint256[] balances_` (external)
 
 get balance of user
 
@@ -84,7 +84,7 @@ get balance of user
 
 ****
 
-`totals() → uint256[]` (public)
+`totals() → uint256[] totals_` (public)
 
 get total staked amount
 

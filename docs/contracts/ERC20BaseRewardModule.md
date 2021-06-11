@@ -133,7 +133,7 @@ internal function to clean up stale funding schedules
 
 ****
 
-`_unlockTokens(address token) → uint256` (internal)
+`_unlockTokens(address token) → uint256 shares` (internal)
 
 
 
@@ -145,12 +145,12 @@ unlocks reward tokens based on funding schedules
 
 
 **Returns**
-- number of shares unlocked
+- shares number of shares unlocked
 
 
 ****
 
-`_distribute(address user, address token, uint256 shares) → uint256` (internal)
+`_distribute(address user, address token, uint256 shares) → uint256 amount` (internal)
 
 
 
@@ -166,6 +166,6 @@ distribute reward tokens to user
 
 
 **Returns**
-- number of reward tokens distributed
+- amount number of reward tokens distributed
 
 
