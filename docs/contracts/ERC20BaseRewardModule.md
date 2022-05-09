@@ -99,7 +99,7 @@ compute number of unlockable shares for a specific funding schedule
 
 `_fund(address token, uint256 amount, uint256 duration, uint256 start)` (internal)
 
-fund Geyser by locking up reward tokens for future distribution
+fund pool by locking up reward tokens for future distribution
 
 
 

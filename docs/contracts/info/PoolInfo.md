@@ -46,3 +46,37 @@ get information about the underlying staking and reward modules
 - reward module type
 
 
+****
+
+`register(address factory, address info)` (external)
+
+register factory to info module
+
+
+
+
+**Parameters**  
+- `factory`: address of factory
+
+- `info`: address of info module contract
+
+**Returns**
+
+
+****
+
+`rewards(address pool, address addr) → uint256[] rewards_` (public)
+
+get pending rewards for arbitrary Pool and user pair
+
+
+
+
+**Parameters**  
+- `pool`: address of Pool contract
+
+- `addr`: address of user for preview
+
+**Returns**
+
+

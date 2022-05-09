@@ -23,6 +23,22 @@ additional information about the ERC20CompetitiveRewardModule contract.
 
 ****
 
+`tokens(address module) → address[] addresses_, string[] names_, string[] symbols_, uint8[] decimals_` (external)
+
+get all token metadata
+
+
+
+
+**Parameters**  
+- `module`: address of reward module
+
+
+**Returns**
+
+
+****
+
 `token(address module) → address, string, string, uint8` (public)
 
 convenience function to get token metadata in a single call
@@ -39,7 +55,28 @@ convenience function to get token metadata in a single call
 
 ****
 
-`rewards(address module, address addr, uint256 shares, uint256 gysr) → uint256, uint256, uint256` (public)
+`rewards(address module, address addr, uint256 shares) → uint256[] rewards_` (public)
+
+generic function to get pending reward balances
+
+
+
+
+**Parameters**  
+- `module`: address of reward module
+
+- `addr`: account address of interest for preview
+
+- `shares`: number of shares that would be used
+
+
+**Returns**
+- rewards_ estimated reward balances
+
+
+****
+
+`preview(address module, address addr, uint256 shares, uint256 gysr) → uint256, uint256, uint256` (public)
 
 preview estimated rewards
 

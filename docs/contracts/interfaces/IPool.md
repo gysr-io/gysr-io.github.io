@@ -141,7 +141,7 @@ stake asset and begin earning rewards
 
 
 **Parameters**  
-- `amount`: number of tokens to unstake
+- `amount`: number of tokens to stake
 
 - `stakingdata`: data passed to staking module
 

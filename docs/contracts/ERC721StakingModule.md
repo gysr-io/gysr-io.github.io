@@ -1,22 +1,22 @@
 ---
 layout: page
-title: ERC20StakingModule
-description: "this staking module allows users to deposit an amount of ERC20 token
-in exchange for shares credited to their address. When the user
+title: ERC721StakingModule
+description: "this staking module allows users to deposit one or more ERC721
+tokens in exchange for shares credited to their address. When the user
 unstakes, these shares will be burned and a reward will be distributed."
-permalink: /docs/ERC20StakingModule/
+permalink: /docs/ERC721StakingModule/
 exclude: true
 categories: [contract]
 ---
 
-### ERC20 staking module
+### ERC721 staking module
 
 
 
-`ERC20StakingModule`
+`ERC721StakingModule`
 
-this staking module allows users to deposit an amount of ERC20 token
-in exchange for shares credited to their address. When the user
+this staking module allows users to deposit one or more ERC721
+tokens in exchange for shares credited to their address. When the user
 unstakes, these shares will be burned and a reward will be distributed.
 
 
@@ -101,7 +101,7 @@ get total staked amount
 
 ****
 
-`stake(address user, uint256 amount, bytes) → address, uint256` (external)
+`stake(address user, uint256 amount, bytes data) → address, uint256` (external)
 
 stake an amount of tokens for user
 
@@ -124,7 +124,7 @@ stake an amount of tokens for user
 
 ****
 
-`unstake(address user, uint256 amount, bytes) → address, uint256` (external)
+`unstake(address user, uint256 amount, bytes data) → address, uint256` (external)
 
 unstake an amount of tokens for user
 
