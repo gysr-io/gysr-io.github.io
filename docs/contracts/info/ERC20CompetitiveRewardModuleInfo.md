@@ -8,11 +8,11 @@ exclude: true
 categories: [contract]
 ---
 
-### ERC20 competitive reward module info library
+ERC20 competitive reward module info library
 
 
 
-`ERC20CompetitiveRewardModuleInfo`
+**`ERC20CompetitiveRewardModuleInfo`**
 
 this library provides read-only convenience functions to query
 additional information about the ERC20CompetitiveRewardModule contract.
@@ -21,48 +21,51 @@ additional information about the ERC20CompetitiveRewardModule contract.
 
 
 
-****
 
-`tokens(address module) → address[] addresses_, string[] names_, string[] symbols_, uint8[] decimals_` (external)
+
+****
+<br>
+
+**`tokens`**`(address module) → address[] addresses_, string[] names_, string[] symbols_, uint8[] decimals_` (external)
 
 get all token metadata
 
 
 
 
-**Parameters**  
+*Parameters*  
 - `module`: address of reward module
 
 
-**Returns**
 
 
 ****
+<br>
 
-`token(address module) → address, string, string, uint8` (public)
+**`token`**`(address module) → address, string, string, uint8` (public)
 
 convenience function to get token metadata in a single call
 
 
 
 
-**Parameters**  
+*Parameters*  
 - `module`: address of reward module
 
 
-**Returns**
 
 
 ****
+<br>
 
-`rewards(address module, address addr, uint256 shares) → uint256[] rewards_` (public)
+**`rewards`**`(address module, address addr, uint256 shares) → uint256[] rewards_` (public)
 
 generic function to get pending reward balances
 
 
 
 
-**Parameters**  
+*Parameters*  
 - `module`: address of reward module
 
 - `addr`: account address of interest for preview
@@ -70,20 +73,21 @@ generic function to get pending reward balances
 - `shares`: number of shares that would be used
 
 
-**Returns**
+*Returns*  
 - rewards_ estimated reward balances
 
 
 ****
+<br>
 
-`preview(address module, address addr, uint256 shares, uint256 gysr) → uint256, uint256, uint256` (public)
+**`preview`**`(address module, address addr, uint256 shares, uint256 gysr) → uint256, uint256, uint256` (public)
 
 preview estimated rewards
 
 
 
 
-**Parameters**  
+*Parameters*  
 - `module`: address of reward module
 
 - `addr`: account address of interest for preview
@@ -93,7 +97,7 @@ preview estimated rewards
 - `gysr`: number of GYSR tokens that would be applied
 
 
-**Returns**
+*Returns*  
 - estimated reward
 
 - estimated time multiplier
@@ -102,32 +106,34 @@ preview estimated rewards
 
 
 ****
+<br>
 
-`unlocked(address module) → uint256` (public)
+**`unlocked`**`(address module) → uint256` (public)
 
 compute effective unlocked rewards
 
 
 
 
-**Parameters**  
+*Parameters*  
 - `module`: address of reward module
 
 
-**Returns**
+*Returns*  
 - estimated current unlocked rewards
 
 
 ****
+<br>
 
-`userShareSeconds(address module, address addr, uint256 shares) → uint256, uint256` (public)
+**`userShareSeconds`**`(address module, address addr, uint256 shares) → uint256, uint256` (public)
 
 compute user share seconds for given number of shares
 
 
 
 
-**Parameters**  
+*Parameters*  
 - `module`: module contract address
 
 - `addr`: user address
@@ -135,26 +141,27 @@ compute user share seconds for given number of shares
 - `shares`: number of shares
 
 
-**Returns**
+*Returns*  
 - raw share seconds
 
 - time bonus share seconds
 
 
 ****
+<br>
 
-`totalShareSeconds(address module) → uint256` (public)
+**`totalShareSeconds`**`(address module) → uint256` (public)
 
 compute total expected share seconds for a rewards module
 
 
 
 
-**Parameters**  
+*Parameters*  
 - `module`: address for reward module
 
 
-**Returns**
+*Returns*  
 - expected total shares seconds
 
 

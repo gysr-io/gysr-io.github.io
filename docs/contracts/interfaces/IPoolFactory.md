@@ -8,11 +8,11 @@ exclude: true
 categories: [contract]
 ---
 
-### Pool factory interface
+Pool factory interface
 
 
 
-`IPoolFactory`
+**`IPoolFactory`**
 
 this defines the Pool factory interface, primarily intended for
 the Pool contract to interact with
@@ -21,31 +21,33 @@ the Pool contract to interact with
 
 
 
+
+
 ****
+<br>
 
-`treasury() → address` (external)
-
-
-
+**`treasury`**`() → address` (external)
 
 
-**Parameters**  
 
-**Returns**
+
+
+
+*Returns*  
 - GYSR treasury address
 
 
 ****
+<br>
 
-`fee() → uint256` (external)
-
-
-
+**`fee`**`() → uint256` (external)
 
 
-**Parameters**  
 
-**Returns**
+
+
+
+*Returns*  
 - GYSR spending fee
 
 

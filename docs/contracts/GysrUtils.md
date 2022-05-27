@@ -8,11 +8,11 @@ exclude: true
 categories: [contract]
 ---
 
-### GYSR utilities
+GYSR utilities
 
 
 
-`GysrUtils`
+**`GysrUtils`**
 
 this library implements utility methods for the GYSR multiplier
 and spending mechanics
@@ -21,9 +21,12 @@ and spending mechanics
 
 
 
-****
 
-`gysrBonus(uint256 gysr, uint256 amount, uint256 total, uint256 ratio) → uint256` (internal)
+
+****
+<br>
+
+**`gysrBonus`**`(uint256 gysr, uint256 amount, uint256 total, uint256 ratio) → uint256` (internal)
 
 compute GYSR bonus as a function of usage ratio, stake amount,
 and GYSR spent
@@ -31,7 +34,7 @@ and GYSR spent
 
 
 
-**Parameters**  
+*Parameters*  
 - `gysr`: number of GYSR token applied to bonus
 
 - `amount`: number of tokens or shares to unstake
@@ -41,7 +44,7 @@ and GYSR spent
 - `ratio`: usage ratio from 0 to 1
 
 
-**Returns**
+*Returns*  
 - multiplier value
 
 

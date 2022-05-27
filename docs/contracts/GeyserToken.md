@@ -7,13 +7,15 @@ exclude: true
 categories: [contract]
 ---
 
-### GYSR token
+GYSR token
 
 
 
-`GeyserToken`
+**`GeyserToken`**
 
 simple ERC20 compliant contract to implement GYSR token
+
+
 
 
 

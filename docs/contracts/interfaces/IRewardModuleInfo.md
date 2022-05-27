@@ -8,11 +8,11 @@ exclude: true
 categories: [contract]
 ---
 
-### Reward module info interface
+Reward module info interface
 
 
 
-`IRewardModuleInfo`
+**`IRewardModuleInfo`**
 
 this contract defines the common interface that any reward module info
 must implement to be compatible with the modular Pool architecture.
@@ -21,32 +21,35 @@ must implement to be compatible with the modular Pool architecture.
 
 
 
-****
 
-`tokens(address module) → address[], string[], string[], uint8[]` (external)
+
+****
+<br>
+
+**`tokens`**`(address module) → address[], string[], string[], uint8[]` (external)
 
 get all token metadata
 
 
 
 
-**Parameters**  
+*Parameters*  
 - `module`: address of reward module
 
 
-**Returns**
 
 
 ****
+<br>
 
-`rewards(address module, address addr, uint256 shares) → uint256[]` (external)
+**`rewards`**`(address module, address addr, uint256 shares) → uint256[]` (external)
 
 generic function to get pending reward balances
 
 
 
 
-**Parameters**  
+*Parameters*  
 - `module`: address of reward module
 
 - `addr`: account address of interest for preview
@@ -54,7 +57,7 @@ generic function to get pending reward balances
 - `shares`: number of shares that would be used
 
 
-**Returns**
+*Returns*  
 - estimated reward balances
 
 

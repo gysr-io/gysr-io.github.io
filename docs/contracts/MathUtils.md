@@ -10,11 +10,11 @@ exclude: true
 categories: [contract]
 ---
 
-### Math utilities
+Math utilities
 
 
 
-`MathUtils`
+**`MathUtils`**
 
 this library implements various logarithmic math utilies which support
 other contracts and specifically the GYSR multiplier calculation
@@ -25,9 +25,12 @@ h/t https://github.com/abdk-consulting/abdk-libraries-solidity
 
 
 
-****
 
-`logbase2(int128 x) → int128` (internal)
+
+****
+<br>
+
+**`logbase2`**`(int128 x) → int128` (internal)
 
 calculate binary logarithm of x
 
@@ -35,17 +38,18 @@ calculate binary logarithm of x
 
 
 
-**Parameters**  
+*Parameters*  
 - `x`: signed 64.64-bit fixed point number, require x > 0
 
 
-**Returns**
+*Returns*  
 - signed 64.64-bit fixed point number
 
 
 ****
+<br>
 
-`ln(int128 x) → int128` (internal)
+**`ln`**`(int128 x) → int128` (internal)
 
 calculate natural logarithm of x
 
@@ -53,17 +57,18 @@ calculate natural logarithm of x
 magic constant comes from ln(2) * 2^128 -> hex
 
 
-**Parameters**  
+*Parameters*  
 - `x`: signed 64.64-bit fixed point number, require x > 0
 
 
-**Returns**
+*Returns*  
 - signed 64.64-bit fixed point number
 
 
 ****
+<br>
 
-`logbase10(int128 x) → int128` (internal)
+**`logbase10`**`(int128 x) → int128` (internal)
 
 calculate logarithm base 10 of x
 
@@ -71,37 +76,35 @@ calculate logarithm base 10 of x
 magic constant comes from log10(2) * 2^128 -> hex
 
 
-**Parameters**  
+*Parameters*  
 - `x`: signed 64.64-bit fixed point number, require x > 0
 
 
-**Returns**
+*Returns*  
 - signed 64.64-bit fixed point number
 
 
 ****
+<br>
 
-`testlogbase2(int128 x) → int128` (public)
-
-
-
+**`testlogbase2`**`(int128 x) → int128` (public)
 
 
-**Parameters**  
 
-**Returns**
+
+
+
 
 
 ****
+<br>
 
-`testlogbase10(int128 x) → int128` (public)
-
-
-
+**`testlogbase10`**`(int128 x) → int128` (public)
 
 
-**Parameters**  
 
-**Returns**
+
+
+
 
 

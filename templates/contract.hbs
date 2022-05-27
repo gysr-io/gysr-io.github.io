@@ -7,51 +7,63 @@ exclude: true
 categories: [contract]
 ---
 
-### {{natspec.title}}
+{{natspec.title}}
 
-`{{name}}`
+**`{{name}}`**
 
 {{{natspec.userdoc}}}
 
 {{{natspec.devdoc}}}
+
 
 {{#each ownModifiers}}
 
 ****
+<br>
 
-`{{name}}({{args}})`
+**`{{name}}`**`({{args}})`
 
 {{{natspec.userdoc}}}
 
 {{{natspec.devdoc}}}
 
 {{/each}}
+
 
 {{#each ownFunctions}}
 
 ****
+<br>
 
-`{{name}}({{args}}){{#if outputs}} → {{outputs}}{{/if}}` ({{visibility}})
+**`{{name}}`**`({{args}}){{#if outputs}} → {{outputs}}{{/if}}` ({{visibility}})
 
 {{{natspec.userdoc}}}
 
 {{{natspec.devdoc}}}
 
-**Parameters**  
+{{#if natspec.params}}
+*Parameters*  
 {{#each natspec.params}}
 - `{{param}}`: {{description}}
 {{/each}}
+{{/if}}
 
-**Returns**
+{{#if natspec.returns}}
+*Returns*  
 {{#each natspec.returns}}
 - {{param}} {{description}}
 {{/each}}
+{{/if}}
 
 {{/each}}
 
-{{#each ownEvents}}
-
+{{#if ownEvents}}
 ****
+<br>
+
+*Events*  
+
+{{#each ownEvents}}
 
 `{{name}}({{args}})`
 
@@ -60,3 +72,4 @@ categories: [contract]
 {{{natspec.devdoc}}}
 
 {{/each}}
+{{/if}}

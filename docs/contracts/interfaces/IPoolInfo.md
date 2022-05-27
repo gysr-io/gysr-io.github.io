@@ -7,11 +7,11 @@ exclude: true
 categories: [contract]
 ---
 
-### Pool info interface
+Pool info interface
 
 
 
-`IPoolInfo`
+**`IPoolInfo`**
 
 this defines the Pool info contract interface
 
@@ -19,20 +19,23 @@ this defines the Pool info contract interface
 
 
 
-****
 
-`modules(address pool) → address, address, address, address` (external)
+
+****
+<br>
+
+**`modules`**`(address pool) → address, address, address, address` (external)
 
 get information about the underlying staking and reward modules
 
 
 
 
-**Parameters**  
+*Parameters*  
 - `pool`: address of Pool contract
 
 
-**Returns**
+*Returns*  
 - staking module address
 
 - reward module address
@@ -43,19 +46,19 @@ get information about the underlying staking and reward modules
 
 
 ****
+<br>
 
-`rewards(address pool, address addr) → uint256[]` (external)
+**`rewards`**`(address pool, address addr) → uint256[]` (external)
 
 get pending rewards for arbitrary Pool and user pair
 
 
 
 
-**Parameters**  
+*Parameters*  
 - `pool`: address of Pool contract
 
 - `addr`: address of user for preview
 
-**Returns**
 
 

@@ -10,11 +10,11 @@ exclude: true
 categories: [contract]
 ---
 
-### ERC20 friendly reward module
+ERC20 friendly reward module
 
 
 
-`ERC20FriendlyRewardModule`
+**`ERC20FriendlyRewardModule`**
 
 this reward module distributes a single ERC20 token as the staking reward.
 It is designed to offer simple and predictable reward mechanics.
@@ -28,15 +28,18 @@ staking to receive a multiplier on their earning rate.
 
 
 
+
+
 ****
+<br>
 
-`constructor(address token_, uint256 vestingStart_, uint256 vestingPeriod_, address factory_)` (public)
-
-
-
+**`constructor`**`(address token_, uint256 vestingStart_, uint256 vestingPeriod_, address factory_)` (public)
 
 
-**Parameters**  
+
+
+
+*Parameters*  
 - `token_`: the token that will be rewarded
 
 - `vestingStart_`: minimum ratio earned
@@ -45,75 +48,75 @@ staking to receive a multiplier on their earning rate.
 
 - `factory_`: address of module factory
 
-**Returns**
 
 
 ****
+<br>
 
-`tokens() → address[] tokens_` (external)
-
-
-
+**`tokens`**`() → address[] tokens_` (external)
 
 
-**Parameters**  
 
-**Returns**
+
+
+
+*Returns*  
 - array of reward tokens
 
 
 ****
+<br>
 
-`factory() → address` (external)
-
-
-
+**`factory`**`() → address` (external)
 
 
-**Parameters**  
 
-**Returns**
+
+
+
+*Returns*  
 - address of module factory
 
 
 ****
+<br>
 
-`balances() → uint256[] balances_` (external)
-
-
-
+**`balances`**`() → uint256[] balances_` (external)
 
 
-**Parameters**  
 
-**Returns**
+
+
+
+*Returns*  
 - array of reward token balances
 
 
 ****
+<br>
 
-`usage() → uint256` (external)
-
-
-
+**`usage`**`() → uint256` (external)
 
 
-**Parameters**  
 
-**Returns**
+
+
+
+*Returns*  
 - GYSR usage ratio for reward module
 
 
 ****
+<br>
 
-`stake(address account, address user, uint256 shares, bytes data) → uint256, uint256` (external)
+**`stake`**`(address account, address user, uint256 shares, bytes data) → uint256, uint256` (external)
 
 perform any necessary accounting for new stake
 
 
 
 
-**Parameters**  
+*Parameters*  
 - `account`: address of staking account
 
 - `user`: address of user
@@ -123,22 +126,23 @@ perform any necessary accounting for new stake
 - `data`: addtional data
 
 
-**Returns**
+*Returns*  
 - amount of gysr spent
 
 - amount of gysr vested
 
 
 ****
+<br>
 
-`_stake(address account, address user, uint256 shares, bytes data) → uint256, uint256` (internal)
+**`_stake`**`(address account, address user, uint256 shares, bytes data) → uint256, uint256` (internal)
 
 internal implementation of stake method
 
 
 
 
-**Parameters**  
+*Parameters*  
 - `account`: address of staking account
 
 - `user`: address of user
@@ -148,22 +152,23 @@ internal implementation of stake method
 - `data`: addtional data
 
 
-**Returns**
+*Returns*  
 - amount of gysr spent
 
 - amount of gysr vested
 
 
 ****
+<br>
 
-`unstake(address account, address user, uint256 shares, bytes) → uint256, uint256` (external)
+**`unstake`**`(address account, address user, uint256 shares, bytes) → uint256, uint256` (external)
 
 reward user and perform any necessary accounting for unstake
 
 
 
 
-**Parameters**  
+*Parameters*  
 - `account`: address of staking account
 
 - `user`: address of user
@@ -173,22 +178,23 @@ reward user and perform any necessary accounting for unstake
 - `data`: additional data
 
 
-**Returns**
+*Returns*  
 - amount of gysr spent
 
 - amount of gysr vested
 
 
 ****
+<br>
 
-`_unstake(address account, address user, uint256 shares) → uint256, uint256` (internal)
+**`_unstake`**`(address account, address user, uint256 shares) → uint256, uint256` (internal)
 
 internal implementation of unstake
 
 
 
 
-**Parameters**  
+*Parameters*  
 - `account`: address of staking account
 
 - `user`: address of user
@@ -196,22 +202,23 @@ internal implementation of unstake
 - `shares`: number of shares burned
 
 
-**Returns**
+*Returns*  
 - amount of gysr spent
 
 - amount of gysr vested
 
 
 ****
+<br>
 
-`claim(address account, address user, uint256 shares, bytes data) → uint256 spent, uint256 vested` (external)
+**`claim`**`(address account, address user, uint256 shares, bytes data) → uint256 spent, uint256 vested` (external)
 
 reward user and perform and necessary accounting for existing stake
 
 
 
 
-**Parameters**  
+*Parameters*  
 - `account`: address of staking account
 
 - `user`: address of user
@@ -221,22 +228,23 @@ reward user and perform and necessary accounting for existing stake
 - `data`: addtional data
 
 
-**Returns**
+*Returns*  
 - amount of gysr spent
 
 - amount of gysr vested
 
 
 ****
+<br>
 
-`_rewardForStakedShares(uint256 shares, uint256 bonus, uint256 rewardTally) → uint256` (internal)
+**`_rewardForStakedShares`**`(uint256 shares, uint256 bonus, uint256 rewardTally) → uint256` (internal)
 
 
 
 compute rewards owed for a specific stake
 
 
-**Parameters**  
+*Parameters*  
 - `shares`: number of shares to calculate rewards for
 
 - `bonus`: associated bonus for this stake
@@ -244,134 +252,135 @@ compute rewards owed for a specific stake
 - `rewardTally`: associated rewardTally for this stake
 
 
-**Returns**
+*Returns*  
 - reward for these staked shares
 
 
 ****
+<br>
 
-`timeVestingCoefficient(uint256 time) → uint256` (public)
+**`timeVestingCoefficient`**`(uint256 time) → uint256` (public)
 
 compute vesting multiplier as function of staking time
 
 
 
 
-**Parameters**  
+*Parameters*  
 - `time`: epoch time at which the tokens were staked
 
 
-**Returns**
+*Returns*  
 - vesting multiplier rewards
 
 
 ****
+<br>
 
-`update(address)` (external)
+**`update`**`(address)` (external)
 
 method called by anyone to update accounting
 
 
 will only be called ad hoc and should not contain essential logic
 
-**Parameters**  
+*Parameters*  
 - `user`: address of user for update
 
 
-**Returns**
 
 
 ****
+<br>
 
-`clean()` (external)
+**`clean`**`()` (external)
 
 method called ad hoc to clean up and perform additional accounting
 
 
 will only be called manually, and should not contain any essential logic
 
-**Parameters**  
 
-**Returns**
 
 
 ****
+<br>
 
-`fund(uint256 amount, uint256 duration)` (external)
+**`fund`**`(uint256 amount, uint256 duration)` (external)
 
 fund Geyser by locking up reward tokens for distribution
 
 
 
 
-**Parameters**  
+*Parameters*  
 - `amount`: number of reward tokens to lock up as funding
 
 - `duration`: period (seconds) over which funding will be unlocked
 
-**Returns**
 
 
 ****
+<br>
 
-`fund(uint256 amount, uint256 duration, uint256 start)` (external)
+**`fund`**`(uint256 amount, uint256 duration, uint256 start)` (external)
 
 fund Geyser by locking up reward tokens for distribution
 
 
 
 
-**Parameters**  
+*Parameters*  
 - `amount`: number of reward tokens to lock up as funding
 
 - `duration`: period (seconds) over which funding will be unlocked
 
 - `start`: time (seconds) at which funding begins to unlock
 
-**Returns**
 
 
 ****
+<br>
 
-`totalLocked() → uint256` (public)
-
-
-
+**`totalLocked`**`() → uint256` (public)
 
 
-**Parameters**  
 
-**Returns**
+
+
+
+*Returns*  
 - total number of locked reward tokens
 
 
 ****
+<br>
 
-`totalUnlocked() → uint256` (public)
-
-
-
+**`totalUnlocked`**`() → uint256` (public)
 
 
-**Parameters**  
 
-**Returns**
+
+
+
+*Returns*  
 - total number of unlocked reward tokens
 
 
 ****
+<br>
 
-`stakeCount(address addr) → uint256` (public)
-
-
-
+**`stakeCount`**`(address addr) → uint256` (public)
 
 
-**Parameters**  
+
+
+
+*Parameters*  
 - `addr`: address of interest
 
 
-**Returns**
+*Returns*  
 - number of active stakes for user
 
 

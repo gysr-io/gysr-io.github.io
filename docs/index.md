@@ -12,7 +12,8 @@ The associated source code can be found at [github.com/gysr-io/core](https://git
 
 <a href="{{page.url}}">{{page.title}}</a>
 <br>
-<small> {{page.description}}</small>
+<small>{{page.description}}<br></small>
+<br>
 </div>
 
 {%- endif -%}

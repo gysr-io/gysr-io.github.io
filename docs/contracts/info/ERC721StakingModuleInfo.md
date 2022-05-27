@@ -8,11 +8,11 @@ exclude: true
 categories: [contract]
 ---
 
-### ERC721 staking module info library
+ERC721 staking module info library
 
 
 
-`ERC721StakingModuleInfo`
+**`ERC721StakingModuleInfo`**
 
 this library provides read-only convenience functions to query
 additional information about the ERC721StakingModule contract.
@@ -21,32 +21,35 @@ additional information about the ERC721StakingModule contract.
 
 
 
-****
 
-`token(address module) → address, string, string, uint8` (public)
+
+****
+<br>
+
+**`token`**`(address module) → address, string, string, uint8` (public)
 
 convenience function to get token metadata in a single call
 
 
 
 
-**Parameters**  
+*Parameters*  
 - `module`: address of staking module
 
 
-**Returns**
 
 
 ****
+<br>
 
-`shares(address module, address addr, uint256 amount) → uint256` (public)
+**`shares`**`(address module, address addr, uint256 amount) → uint256` (public)
 
 quote the share value for an amount of tokens
 
 
 
 
-**Parameters**  
+*Parameters*  
 - `module`: address of staking module
 
 - `addr`: account address of interest
@@ -54,37 +57,39 @@ quote the share value for an amount of tokens
 - `amount`: number of tokens. if zero, return entire share balance
 
 
-**Returns**
+*Returns*  
 - number of shares
 
 
 ****
+<br>
 
-`sharesPerToken(address module) → uint256` (public)
+**`sharesPerToken`**`(address module) → uint256` (public)
 
 get shares per token
 
 
 
 
-**Parameters**  
+*Parameters*  
 - `module`: address of staking module
 
 
-**Returns**
+*Returns*  
 - current shares per token
 
 
 ****
+<br>
 
-`tokenIds(address module, address addr, uint256 amount, uint256 start) → uint256[] ids` (public)
+**`tokenIds`**`(address module, address addr, uint256 amount, uint256 start) → uint256[] ids` (public)
 
 get staked token ids for user
 
 
 
 
-**Parameters**  
+*Parameters*  
 - `module`: address of staking module
 
 - `addr`: account address of interest
@@ -94,7 +99,7 @@ get staked token ids for user
 - `start`: token index to start at
 
 
-**Returns**
+*Returns*  
 - ids array of token ids
 
 

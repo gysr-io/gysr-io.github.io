@@ -8,11 +8,11 @@ exclude: true
 categories: [contract]
 ---
 
-### Module factory interface
+Module factory interface
 
 
 
-`IModuleFactory`
+**`IModuleFactory`**
 
 this defines the common module factory interface used by the
 main factory to create the staking and reward modules for a new Pool.
@@ -21,25 +21,31 @@ main factory to create the staking and reward modules for a new Pool.
 
 
 
-****
 
-`createModule(bytes data) → address` (external)
+
+****
+<br>
+
+**`createModule`**`(bytes data) → address` (external)
 
 create a new Pool module
 
 
 
 
-**Parameters**  
+*Parameters*  
 - `data`: binary encoded construction parameters
 
 
-**Returns**
+*Returns*  
 - address of newly created module
 
 
-
 ****
+<br>
+
+*Events*  
+
 
 `ModuleCreated(address user, address module)`
 

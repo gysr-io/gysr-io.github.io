@@ -10,11 +10,11 @@ exclude: true
 categories: [contract]
 ---
 
-### ERC20 competitive reward module
+ERC20 competitive reward module
 
 
 
-`ERC20CompetitiveRewardModule`
+**`ERC20CompetitiveRewardModule`**
 
 this reward module distributes a single ERC20 token as the staking reward.
 It is designed to offer competitive and engaging reward mechanics.
@@ -30,15 +30,18 @@ h/t https://github.com/ampleforth/token-geyser
 
 
 
+
+
 ****
+<br>
 
-`constructor(address token_, uint256 bonusMin_, uint256 bonusMax_, uint256 bonusPeriod_, address factory_)` (public)
-
-
-
+**`constructor`**`(address token_, uint256 bonusMin_, uint256 bonusMax_, uint256 bonusPeriod_, address factory_)` (public)
 
 
-**Parameters**  
+
+
+
+*Parameters*  
 - `token_`: the token that will be rewarded
 
 - `bonusMin_`: initial time bonus
@@ -49,75 +52,75 @@ h/t https://github.com/ampleforth/token-geyser
 
 - `factory_`: address of module factory
 
-**Returns**
 
 
 ****
+<br>
 
-`tokens() → address[] tokens_` (external)
-
-
-
+**`tokens`**`() → address[] tokens_` (external)
 
 
-**Parameters**  
 
-**Returns**
+
+
+
+*Returns*  
 - array of reward tokens
 
 
 ****
+<br>
 
-`balances() → uint256[] balances_` (external)
-
-
-
+**`balances`**`() → uint256[] balances_` (external)
 
 
-**Parameters**  
 
-**Returns**
+
+
+
+*Returns*  
 - array of reward token balances
 
 
 ****
+<br>
 
-`usage() → uint256` (external)
-
-
-
+**`usage`**`() → uint256` (external)
 
 
-**Parameters**  
 
-**Returns**
+
+
+
+*Returns*  
 - GYSR usage ratio for reward module
 
 
 ****
+<br>
 
-`factory() → address` (external)
-
-
-
+**`factory`**`() → address` (external)
 
 
-**Parameters**  
 
-**Returns**
+
+
+
+*Returns*  
 - address of module factory
 
 
 ****
+<br>
 
-`stake(address account, address, uint256 shares, bytes) → uint256, uint256` (external)
+**`stake`**`(address account, address, uint256 shares, bytes) → uint256, uint256` (external)
 
 perform any necessary accounting for new stake
 
 
 
 
-**Parameters**  
+*Parameters*  
 - `account`: address of staking account
 
 - `user`: address of user
@@ -127,22 +130,23 @@ perform any necessary accounting for new stake
 - `data`: addtional data
 
 
-**Returns**
+*Returns*  
 - amount of gysr spent
 
 - amount of gysr vested
 
 
 ****
+<br>
 
-`unstake(address account, address user, uint256 shares, bytes data) → uint256, uint256` (external)
+**`unstake`**`(address account, address user, uint256 shares, bytes data) → uint256, uint256` (external)
 
 reward user and perform any necessary accounting for unstake
 
 
 
 
-**Parameters**  
+*Parameters*  
 - `account`: address of staking account
 
 - `user`: address of user
@@ -152,22 +156,23 @@ reward user and perform any necessary accounting for unstake
 - `data`: additional data
 
 
-**Returns**
+*Returns*  
 - amount of gysr spent
 
 - amount of gysr vested
 
 
 ****
+<br>
 
-`claim(address account, address user, uint256 shares, bytes data) → uint256 spent, uint256 vested` (external)
+**`claim`**`(address account, address user, uint256 shares, bytes data) → uint256 spent, uint256 vested` (external)
 
 reward user and perform and necessary accounting for existing stake
 
 
 
 
-**Parameters**  
+*Parameters*  
 - `account`: address of staking account
 
 - `user`: address of user
@@ -177,136 +182,137 @@ reward user and perform and necessary accounting for existing stake
 - `data`: addtional data
 
 
-**Returns**
+*Returns*  
 - amount of gysr spent
 
 - amount of gysr vested
 
 
 ****
+<br>
 
-`update(address)` (external)
+**`update`**`(address)` (external)
 
 method called by anyone to update accounting
 
 
 will only be called ad hoc and should not contain essential logic
 
-**Parameters**  
+*Parameters*  
 - `user`: address of user for update
 
 
-**Returns**
 
 
 ****
+<br>
 
-`clean()` (external)
+**`clean`**`()` (external)
 
 method called by owner to clean up and perform additional accounting
 
 
 will only be called ad hoc and should not contain any essential logic
 
-**Parameters**  
 
-**Returns**
 
 
 ****
+<br>
 
-`fund(uint256 amount, uint256 duration)` (external)
+**`fund`**`(uint256 amount, uint256 duration)` (external)
 
 fund module by locking up reward tokens for distribution
 
 
 
 
-**Parameters**  
+*Parameters*  
 - `amount`: number of reward tokens to lock up as funding
 
 - `duration`: period (seconds) over which funding will be unlocked
 
-**Returns**
 
 
 ****
+<br>
 
-`fund(uint256 amount, uint256 duration, uint256 start)` (external)
+**`fund`**`(uint256 amount, uint256 duration, uint256 start)` (external)
 
 fund module by locking up reward tokens for distribution
 
 
 
 
-**Parameters**  
+*Parameters*  
 - `amount`: number of reward tokens to lock up as funding
 
 - `duration`: period (seconds) over which funding will be unlocked
 
 - `start`: time (seconds) at which funding begins to unlock
 
-**Returns**
 
 
 ****
+<br>
 
-`timeBonus(uint256 time) → uint256` (public)
+**`timeBonus`**`(uint256 time) → uint256` (public)
 
 compute time bonus earned as a function of staking time
 
 
 
 
-**Parameters**  
+*Parameters*  
 - `time`: length of time for which the tokens have been staked
 
 
-**Returns**
+*Returns*  
 - bonus multiplier for time
 
 
 ****
+<br>
 
-`totalLocked() → uint256` (public)
-
-
-
+**`totalLocked`**`() → uint256` (public)
 
 
-**Parameters**  
 
-**Returns**
+
+
+
+*Returns*  
 - total number of locked reward tokens
 
 
 ****
+<br>
 
-`totalUnlocked() → uint256` (public)
-
-
-
+**`totalUnlocked`**`() → uint256` (public)
 
 
-**Parameters**  
 
-**Returns**
+
+
+
+*Returns*  
 - total number of unlocked reward tokens
 
 
 ****
+<br>
 
-`stakeCount(address addr) → uint256` (public)
-
-
-
+**`stakeCount`**`(address addr) → uint256` (public)
 
 
-**Parameters**  
+
+
+
+*Parameters*  
 - `addr`: address of interest
 
 
-**Returns**
+*Returns*  
 - number of active stakes for user
 
 

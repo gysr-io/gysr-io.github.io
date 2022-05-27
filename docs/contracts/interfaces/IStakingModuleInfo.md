@@ -8,11 +8,11 @@ exclude: true
 categories: [contract]
 ---
 
-### Staking module info interface
+Staking module info interface
 
 
 
-`IStakingModuleInfo`
+**`IStakingModuleInfo`**
 
 this contract defines the common interface that any staking module info
 must implement to be compatible with the modular Pool architecture.
@@ -21,32 +21,35 @@ must implement to be compatible with the modular Pool architecture.
 
 
 
-****
 
-`token(address module) → address, string, string, uint8` (external)
+
+****
+<br>
+
+**`token`**`(address module) → address, string, string, uint8` (external)
 
 convenience function to get token metadata in a single call
 
 
 
 
-**Parameters**  
+*Parameters*  
 - `module`: address of staking module
 
 
-**Returns**
 
 
 ****
+<br>
 
-`shares(address module, address addr, uint256 amount) → uint256` (external)
+**`shares`**`(address module, address addr, uint256 amount) → uint256` (external)
 
 quote the share value for an amount of tokens
 
 
 
 
-**Parameters**  
+*Parameters*  
 - `module`: address of staking module
 
 - `addr`: account address of interest
@@ -54,21 +57,21 @@ quote the share value for an amount of tokens
 - `amount`: number of tokens. if zero, return entire share balance
 
 
-**Returns**
+*Returns*  
 - number of shares
 
 
 ****
+<br>
 
-`sharesPerToken(address module) → uint256` (external)
-
-
-
+**`sharesPerToken`**`(address module) → uint256` (external)
 
 
-**Parameters**  
 
-**Returns**
+
+
+
+*Returns*  
 - current shares per token
 
 

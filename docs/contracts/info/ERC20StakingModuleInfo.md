@@ -8,11 +8,11 @@ exclude: true
 categories: [contract]
 ---
 
-### ERC20 staking module info library
+ERC20 staking module info library
 
 
 
-`ERC20StakingModuleInfo`
+**`ERC20StakingModuleInfo`**
 
 this library provides read-only convenience functions to query
 additional information about the ERC20StakingModule contract.
@@ -21,32 +21,35 @@ additional information about the ERC20StakingModule contract.
 
 
 
-****
 
-`token(address module) → address, string, string, uint8` (public)
+
+****
+<br>
+
+**`token`**`(address module) → address, string, string, uint8` (public)
 
 convenience function to get token metadata in a single call
 
 
 
 
-**Parameters**  
+*Parameters*  
 - `module`: address of staking module
 
 
-**Returns**
 
 
 ****
+<br>
 
-`shares(address module, address addr, uint256 amount) → uint256` (public)
+**`shares`**`(address module, address addr, uint256 amount) → uint256` (public)
 
 quote the share value for an amount of tokens
 
 
 
 
-**Parameters**  
+*Parameters*  
 - `module`: address of staking module
 
 - `addr`: account address of interest
@@ -54,24 +57,25 @@ quote the share value for an amount of tokens
 - `amount`: number of tokens. if zero, return entire share balance
 
 
-**Returns**
+*Returns*  
 - number of shares
 
 
 ****
+<br>
 
-`sharesPerToken(address module) → uint256` (public)
+**`sharesPerToken`**`(address module) → uint256` (public)
 
 get shares per token
 
 
 
 
-**Parameters**  
+*Parameters*  
 - `module`: address of staking module
 
 
-**Returns**
+*Returns*  
 - current shares per token
 
 

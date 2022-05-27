@@ -8,11 +8,11 @@ exclude: true
 categories: [contract]
 ---
 
-### Staking module interface
+Staking module interface
 
 
 
-`IStakingModule`
+**`IStakingModule`**
 
 this contract defines the common interface that any staking module
 must implement to be compatible with the modular Pool architecture.
@@ -21,76 +21,80 @@ must implement to be compatible with the modular Pool architecture.
 
 
 
+
+
 ****
+<br>
 
-`tokens() → address[]` (external)
-
-
-
+**`tokens`**`() → address[]` (external)
 
 
-**Parameters**  
 
-**Returns**
+
+
+
+*Returns*  
 - array of staking tokens
 
 
 ****
+<br>
 
-`balances(address user) → uint256[]` (external)
+**`balances`**`(address user) → uint256[]` (external)
 
 get balance of user
 
 
 
 
-**Parameters**  
+*Parameters*  
 - `user`: address of user
 
 
-**Returns**
+*Returns*  
 - balances of each staking token
 
 
 ****
+<br>
 
-`factory() → address` (external)
-
-
-
+**`factory`**`() → address` (external)
 
 
-**Parameters**  
 
-**Returns**
+
+
+
+*Returns*  
 - address of module factory
 
 
 ****
+<br>
 
-`totals() → uint256[]` (external)
+**`totals`**`() → uint256[]` (external)
 
 get total staked amount
 
 
 
 
-**Parameters**  
 
-**Returns**
+*Returns*  
 - totals for each staking token
 
 
 ****
+<br>
 
-`stake(address user, uint256 amount, bytes data) → address, uint256` (external)
+**`stake`**`(address user, uint256 amount, bytes data) → address, uint256` (external)
 
 stake an amount of tokens for user
 
 
 
 
-**Parameters**  
+*Parameters*  
 - `user`: address of user
 
 - `amount`: number of tokens to stake
@@ -98,22 +102,23 @@ stake an amount of tokens for user
 - `data`: additional data
 
 
-**Returns**
+*Returns*  
 - address of staking account
 
 - number of shares minted for stake
 
 
 ****
+<br>
 
-`unstake(address user, uint256 amount, bytes data) → address, uint256` (external)
+**`unstake`**`(address user, uint256 amount, bytes data) → address, uint256` (external)
 
 unstake an amount of tokens for user
 
 
 
 
-**Parameters**  
+*Parameters*  
 - `user`: address of user
 
 - `amount`: number of tokens to unstake
@@ -121,22 +126,23 @@ unstake an amount of tokens for user
 - `data`: additional data
 
 
-**Returns**
+*Returns*  
 - address of staking account
 
 - number of shares burned for unstake
 
 
 ****
+<br>
 
-`claim(address user, uint256 amount, bytes data) → address, uint256` (external)
+**`claim`**`(address user, uint256 amount, bytes data) → address, uint256` (external)
 
 quote the share value for an amount of tokens without unstaking
 
 
 
 
-**Parameters**  
+*Parameters*  
 - `user`: address of user
 
 - `amount`: number of tokens to claim with
@@ -144,39 +150,38 @@ quote the share value for an amount of tokens without unstaking
 - `data`: additional data
 
 
-**Returns**
+*Returns*  
 - address of staking account
 
 - number of shares that the claim amount is worth
 
 
 ****
+<br>
 
-`update(address user)` (external)
+**`update`**`(address user)` (external)
 
 method called by anyone to update accounting
 
 
 will only be called ad hoc and should not contain essential logic
 
-**Parameters**  
+*Parameters*  
 - `user`: address of user for update
 
 
-**Returns**
 
 
 ****
+<br>
 
-`clean()` (external)
+**`clean`**`()` (external)
 
 method called by owner to clean up and perform additional accounting
 
 
 will only be called ad hoc and should not contain any essential logic
 
-**Parameters**  
 
-**Returns**
 
 

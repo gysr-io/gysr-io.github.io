@@ -9,11 +9,11 @@ exclude: true
 categories: [contract]
 ---
 
-### Owner controller
+Owner controller
 
 
 
-`OwnerController`
+**`OwnerController`**
 
 this base contract implements an owner-controller access model.
 
@@ -30,9 +30,11 @@ Original contract here:
 https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol
 
 
-****
 
-`onlyOwner()`
+****
+<br>
+
+**`onlyOwner`**`()`
 
 
 
@@ -40,8 +42,9 @@ Modifier that throws if called by any account other than the owner.
 
 
 ****
+<br>
 
-`onlyController()`
+**`onlyController`**`()`
 
 
 
@@ -49,61 +52,59 @@ Modifier that throws if called by any account other than the controller.
 
 
 
-****
 
-`owner() → address` (public)
+****
+<br>
+
+**`owner`**`() → address` (public)
 
 
 
 Returns the address of the current owner.
 
-**Parameters**  
 
-**Returns**
 
 
 ****
+<br>
 
-`controller() → address` (public)
+**`controller`**`() → address` (public)
 
 
 
 Returns the address of the current controller.
 
-**Parameters**  
 
-**Returns**
 
 
 ****
+<br>
 
-`requireOwner()` (internal)
+**`requireOwner`**`()` (internal)
 
 
 
 Throws if called by any account other than the owner.
 
-**Parameters**  
 
-**Returns**
 
 
 ****
+<br>
 
-`requireController()` (internal)
+**`requireController`**`()` (internal)
 
 
 
 Throws if called by any account other than the controller.
 
-**Parameters**  
 
-**Returns**
 
 
 ****
+<br>
 
-`transferOwnership(address newOwner)` (public)
+**`transferOwnership`**`(address newOwner)` (public)
 
 
 
@@ -111,27 +112,27 @@ Transfers ownership of the contract to a new account (`newOwner`). This can
 include renouncing ownership by transferring to the zero address.
 Can only be called by the current owner.
 
-**Parameters**  
 
-**Returns**
 
 
 ****
+<br>
 
-`transferControl(address newController)` (public)
+**`transferControl`**`(address newController)` (public)
 
 
 
 Transfers control of the contract to a new account (`newController`).
 Can only be called by the owner.
 
-**Parameters**  
-
-**Returns**
 
 
 
 ****
+<br>
+
+*Events*  
+
 
 `OwnershipTransferred(address previousOwner, address newOwner)`
 
@@ -139,8 +140,6 @@ Can only be called by the owner.
 
 
 
-
-****
 
 `ControlTransferred(address previousController, address newController)`
 

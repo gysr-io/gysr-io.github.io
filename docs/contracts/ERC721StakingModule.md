@@ -9,11 +9,11 @@ exclude: true
 categories: [contract]
 ---
 
-### ERC721 staking module
+ERC721 staking module
 
 
 
-`ERC721StakingModule`
+**`ERC721StakingModule`**
 
 this staking module allows users to deposit one or more ERC721
 tokens in exchange for shares credited to their address. When the user
@@ -23,92 +23,96 @@ unstakes, these shares will be burned and a reward will be distributed.
 
 
 
+
+
 ****
+<br>
 
-`constructor(address token_, address factory_)` (public)
-
-
-
+**`constructor`**`(address token_, address factory_)` (public)
 
 
-**Parameters**  
+
+
+
+*Parameters*  
 - `token_`: the token that will be rewarded
 
 - `factory_`: address of module factory
 
-**Returns**
 
 
 ****
+<br>
 
-`tokens() → address[] tokens_` (external)
-
-
-
+**`tokens`**`() → address[] tokens_` (external)
 
 
-**Parameters**  
 
-**Returns**
+
+
+
+*Returns*  
 - array of staking tokens
 
 
 ****
+<br>
 
-`balances(address user) → uint256[] balances_` (external)
+**`balances`**`(address user) → uint256[] balances_` (external)
 
 get balance of user
 
 
 
 
-**Parameters**  
+*Parameters*  
 - `user`: address of user
 
 
-**Returns**
+*Returns*  
 - balances of each staking token
 
 
 ****
+<br>
 
-`factory() → address` (external)
-
-
-
+**`factory`**`() → address` (external)
 
 
-**Parameters**  
 
-**Returns**
+
+
+
+*Returns*  
 - address of module factory
 
 
 ****
+<br>
 
-`totals() → uint256[] totals_` (external)
+**`totals`**`() → uint256[] totals_` (external)
 
 get total staked amount
 
 
 
 
-**Parameters**  
 
-**Returns**
+*Returns*  
 - totals for each staking token
 
 
 ****
+<br>
 
-`stake(address user, uint256 amount, bytes data) → address, uint256` (external)
+**`stake`**`(address user, uint256 amount, bytes data) → address, uint256` (external)
 
 stake an amount of tokens for user
 
 
 
 
-**Parameters**  
+*Parameters*  
 - `user`: address of user
 
 - `amount`: number of tokens to stake
@@ -116,22 +120,23 @@ stake an amount of tokens for user
 - `data`: additional data
 
 
-**Returns**
+*Returns*  
 - address of staking account
 
 - number of shares minted for stake
 
 
 ****
+<br>
 
-`unstake(address user, uint256 amount, bytes data) → address, uint256` (external)
+**`unstake`**`(address user, uint256 amount, bytes data) → address, uint256` (external)
 
 unstake an amount of tokens for user
 
 
 
 
-**Parameters**  
+*Parameters*  
 - `user`: address of user
 
 - `amount`: number of tokens to unstake
@@ -139,22 +144,23 @@ unstake an amount of tokens for user
 - `data`: additional data
 
 
-**Returns**
+*Returns*  
 - address of staking account
 
 - number of shares burned for unstake
 
 
 ****
+<br>
 
-`claim(address user, uint256 amount, bytes) → address, uint256` (external)
+**`claim`**`(address user, uint256 amount, bytes) → address, uint256` (external)
 
 quote the share value for an amount of tokens without unstaking
 
 
 
 
-**Parameters**  
+*Parameters*  
 - `user`: address of user
 
 - `amount`: number of tokens to claim with
@@ -162,39 +168,38 @@ quote the share value for an amount of tokens without unstaking
 - `data`: additional data
 
 
-**Returns**
+*Returns*  
 - address of staking account
 
 - number of shares that the claim amount is worth
 
 
 ****
+<br>
 
-`update(address)` (external)
+**`update`**`(address)` (external)
 
 method called by anyone to update accounting
 
 
 will only be called ad hoc and should not contain essential logic
 
-**Parameters**  
+*Parameters*  
 - `user`: address of user for update
 
 
-**Returns**
 
 
 ****
+<br>
 
-`clean()` (external)
+**`clean`**`()` (external)
 
 method called by owner to clean up and perform additional accounting
 
 
 will only be called ad hoc and should not contain any essential logic
 
-**Parameters**  
 
-**Returns**
 
 

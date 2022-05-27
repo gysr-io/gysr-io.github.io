@@ -10,11 +10,11 @@ exclude: true
 categories: [contract]
 ---
 
-### Pool factory
+Pool factory
 
 
 
-`PoolFactory`
+**`PoolFactory`**
 
 this implements the Pool factory contract which allows any user to
 easily configure and deploy their own Pool
@@ -30,30 +30,33 @@ treasury address, fee amount, and module factory whitelist.
 
 
 
+
+
 ****
+<br>
 
-`constructor(address gysr_, address treasury_)` (public)
-
-
-
+**`constructor`**`(address gysr_, address treasury_)` (public)
 
 
-**Parameters**  
+
+
+
+*Parameters*  
 - `gysr_`: address of GYSR token
 
-**Returns**
 
 
 ****
+<br>
 
-`create(address staking, address reward, bytes stakingdata, bytes rewarddata) → address` (external)
+**`create`**`(address staking, address reward, bytes stakingdata, bytes rewarddata) → address` (external)
 
 create a new Pool
 
 
 
 
-**Parameters**  
+*Parameters*  
 - `staking`: address of factory that will be used to create staking module
 
 - `reward`: address of factory that will be used to create reward module
@@ -63,101 +66,104 @@ create a new Pool
 - `rewarddata`: construction data for reward module factory
 
 
-**Returns**
+*Returns*  
 - address of newly created Pool
 
 
 ****
+<br>
 
-`treasury() → address` (external)
-
-
-
+**`treasury`**`() → address` (external)
 
 
-**Parameters**  
 
-**Returns**
+
+
+
+*Returns*  
 - GYSR treasury address
 
 
 ****
+<br>
 
-`fee() → uint256` (external)
-
-
-
+**`fee`**`() → uint256` (external)
 
 
-**Parameters**  
 
-**Returns**
+
+
+
+*Returns*  
 - GYSR spending fee
 
 
 ****
+<br>
 
-`setTreasury(address treasury_)` (external)
+**`setTreasury`**`(address treasury_)` (external)
 
 update the GYSR treasury address
 
 
 
 
-**Parameters**  
+*Parameters*  
 - `treasury_`: new value for treasury address
 
-**Returns**
 
 
 ****
+<br>
 
-`setFee(uint256 fee_)` (external)
+**`setFee`**`(uint256 fee_)` (external)
 
 update the global GYSR spending fee
 
 
 
 
-**Parameters**  
+*Parameters*  
 - `fee_`: new value for GYSR spending fee
 
-**Returns**
 
 
 ****
+<br>
 
-`setWhitelist(address factory_, uint256 type_)` (external)
+**`setWhitelist`**`(address factory_, uint256 type_)` (external)
 
 set the whitelist status of a module factory
 
 
 
 
-**Parameters**  
+*Parameters*  
 - `factory_`: address of module factory
 
 - `type_`: updated whitelist status for module
 
-**Returns**
 
 
 ****
+<br>
 
-`count() → uint256` (public)
-
-
-
+**`count`**`() → uint256` (public)
 
 
-**Parameters**  
 
-**Returns**
+
+
+
+*Returns*  
 - total number of Pools created by the factory
 
 
-
 ****
+<br>
+
+*Events*  
+
 
 `PoolCreated(address user, address pool)`
 
@@ -166,8 +172,6 @@ set the whitelist status of a module factory
 
 
 
-****
-
 `FeeUpdated(uint256 previous, uint256 updated)`
 
 
@@ -175,16 +179,12 @@ set the whitelist status of a module factory
 
 
 
-****
-
 `TreasuryUpdated(address previous, address updated)`
 
 
 
 
 
-
-****
 
 `WhitelistUpdated(address factory, uint256 previous, uint256 updated)`
 

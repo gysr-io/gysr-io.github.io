@@ -9,11 +9,11 @@ exclude: true
 categories: [contract]
 ---
 
-### Pool
+Pool
 
 
 
-`Pool`
+**`Pool`**
 
 this implements the GYSR core Pool contract. It supports generalized
 incentive mechanisms through a modular architecture, where
@@ -23,15 +23,18 @@ staking and reward logic is contained in child contracts.
 
 
 
+
+
 ****
+<br>
 
-`constructor(address staking_, address reward_, address gysr_, address factory_)` (public)
-
-
-
+**`constructor`**`(address staking_, address reward_, address gysr_, address factory_)` (public)
 
 
-**Parameters**  
+
+
+
+*Parameters*  
 - `staking_`: the staking module address
 
 - `reward_`: the reward module address
@@ -40,245 +43,242 @@ staking and reward logic is contained in child contracts.
 
 - `factory_`: address for parent factory
 
-**Returns**
 
 
 ****
+<br>
 
-`stakingTokens() → address[]` (external)
-
-
-
+**`stakingTokens`**`() → address[]` (external)
 
 
-**Parameters**  
 
-**Returns**
+
+
+
+*Returns*  
 - staking tokens for Pool
 
 
 ****
+<br>
 
-`rewardTokens() → address[]` (external)
-
-
-
+**`rewardTokens`**`() → address[]` (external)
 
 
-**Parameters**  
 
-**Returns**
+
+
+
+*Returns*  
 - reward tokens for Pool
 
 
 ****
+<br>
 
-`stakingBalances(address user) → uint256[]` (external)
-
-
-
+**`stakingBalances`**`(address user) → uint256[]` (external)
 
 
-**Parameters**  
 
-**Returns**
+
+
+
+*Returns*  
 - staking balances for user
 
 
 ****
+<br>
 
-`stakingTotals() → uint256[]` (external)
-
-
-
+**`stakingTotals`**`() → uint256[]` (external)
 
 
-**Parameters**  
 
-**Returns**
+
+
+
+*Returns*  
 - total staking balances for Pool
 
 
 ****
+<br>
 
-`rewardBalances() → uint256[]` (external)
-
-
-
+**`rewardBalances`**`() → uint256[]` (external)
 
 
-**Parameters**  
 
-**Returns**
+
+
+
+*Returns*  
 - reward balances for Pool
 
 
 ****
+<br>
 
-`usage() → uint256` (external)
-
-
-
+**`usage`**`() → uint256` (external)
 
 
-**Parameters**  
 
-**Returns**
+
+
+
+*Returns*  
 - GYSR usage ratio for Pool
 
 
 ****
+<br>
 
-`stakingModule() → address` (external)
-
-
-
+**`stakingModule`**`() → address` (external)
 
 
-**Parameters**  
 
-**Returns**
+
+
+
+*Returns*  
 - address of staking module
 
 
 ****
+<br>
 
-`rewardModule() → address` (external)
-
-
-
+**`rewardModule`**`() → address` (external)
 
 
-**Parameters**  
 
-**Returns**
+
+
+
+*Returns*  
 - address of reward module
 
 
 ****
+<br>
 
-`stake(uint256 amount, bytes stakingdata, bytes rewarddata)` (external)
+**`stake`**`(uint256 amount, bytes stakingdata, bytes rewarddata)` (external)
 
 stake asset and begin earning rewards
 
 
 
 
-**Parameters**  
+*Parameters*  
 - `amount`: number of tokens to stake
 
 - `stakingdata`: data passed to staking module
 
 - `rewarddata`: data passed to reward module
 
-**Returns**
 
 
 ****
+<br>
 
-`unstake(uint256 amount, bytes stakingdata, bytes rewarddata)` (external)
+**`unstake`**`(uint256 amount, bytes stakingdata, bytes rewarddata)` (external)
 
 unstake asset and claim rewards
 
 
 
 
-**Parameters**  
+*Parameters*  
 - `amount`: number of tokens to unstake
 
 - `stakingdata`: data passed to staking module
 
 - `rewarddata`: data passed to reward module
 
-**Returns**
 
 
 ****
+<br>
 
-`claim(uint256 amount, bytes stakingdata, bytes rewarddata)` (external)
+**`claim`**`(uint256 amount, bytes stakingdata, bytes rewarddata)` (external)
 
 claim rewards without unstaking
 
 
 
 
-**Parameters**  
+*Parameters*  
 - `amount`: number of tokens to claim against
 
 - `stakingdata`: data passed to staking module
 
 - `rewarddata`: data passed to reward module
 
-**Returns**
 
 
 ****
+<br>
 
-`update()` (external)
+**`update`**`()` (external)
 
 method called ad hoc to update user accounting
 
 
 
-**Parameters**  
 
-**Returns**
 
 
 ****
+<br>
 
-`clean()` (external)
+**`clean`**`()` (external)
 
 method called ad hoc to clean up and perform additional accounting
 
 
 
-**Parameters**  
 
-**Returns**
 
 
 ****
+<br>
 
-`gysrBalance() → uint256` (external)
-
-
-
+**`gysrBalance`**`() → uint256` (external)
 
 
-**Parameters**  
 
-**Returns**
+
+
+
+*Returns*  
 - gysr balance available for withdrawal
 
 
 ****
+<br>
 
-`withdraw(uint256 amount)` (external)
+**`withdraw`**`(uint256 amount)` (external)
 
 withdraw GYSR tokens applied during unstaking
 
 
 
 
-**Parameters**  
+*Parameters*  
 - `amount`: number of GYSR to withdraw
 
-**Returns**
 
 
 ****
+<br>
 
-`transferControl(address newController)` (public)
+**`transferControl`**`(address newController)` (public)
 
 transfer control of the Pool and modules to another account
 
 
 
 
-**Parameters**  
+*Parameters*  
 - `newController`: address of new controller
 
-**Returns**
 
 

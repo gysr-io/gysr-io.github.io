@@ -113,3 +113,4 @@ truffle.js
 truffle-config.js
 
 .vscode/
+docs/contracts/test

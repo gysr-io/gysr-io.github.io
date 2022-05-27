@@ -8,11 +8,11 @@ exclude: true
 categories: [contract]
 ---
 
-### ERC20 base reward module
+ERC20 base reward module
 
 
 
-`ERC20BaseRewardModule`
+**`ERC20BaseRewardModule`**
 
 this abstract class implements common ERC20 funding and unlocking
 logic, which is inherited by other reward modules.
@@ -21,90 +21,92 @@ logic, which is inherited by other reward modules.
 
 
 
-****
 
-`totalShares(address token) → uint256` (public)
+
+****
+<br>
+
+**`totalShares`**`(address token) → uint256` (public)
 
 getter for total token shares
 
 
 
-**Parameters**  
 
-**Returns**
 
 
 ****
+<br>
 
-`lockedShares(address token) → uint256` (public)
+**`lockedShares`**`(address token) → uint256` (public)
 
 getter for total locked token shares
 
 
 
-**Parameters**  
 
-**Returns**
 
 
 ****
+<br>
 
-`fundings(address token, uint256 index) → uint256 amount, uint256 shares, uint256 locked, uint256 updated, uint256 start, uint256 duration` (public)
+**`fundings`**`(address token, uint256 index) → uint256 amount, uint256 shares, uint256 locked, uint256 updated, uint256 start, uint256 duration` (public)
 
 getter for funding schedule struct
 
 
 
-**Parameters**  
 
-**Returns**
 
 
 ****
+<br>
 
-`fundingCount(address token) → uint256` (public)
-
-
-
+**`fundingCount`**`(address token) → uint256` (public)
 
 
-**Parameters**  
+
+
+
+*Parameters*  
 - `token`: contract address of reward token
 
 
-**Returns**
+*Returns*  
 - number of active funding schedules
 
 
 ****
+<br>
 
-`unlockable(address token, uint256 idx) → uint256` (public)
+**`unlockable`**`(address token, uint256 idx) → uint256` (public)
 
 compute number of unlockable shares for a specific funding schedule
 
 
 
 
-**Parameters**  
+*Parameters*  
 - `token`: contract address of reward token
 
 - `idx`: index of the funding
 
 
-**Returns**
+*Returns*  
 - the number of unlockable shares
 
 
 ****
+<br>
 
-`_fund(address token, uint256 amount, uint256 duration, uint256 start)` (internal)
+**`_fund`**`(address token, uint256 amount, uint256 duration, uint256 start)` (internal)
 
 fund pool by locking up reward tokens for future distribution
 
 
 
 
-**Parameters**  
+*Parameters*  
 - `token`: contract address of reward token
 
 - `amount`: number of reward tokens to lock up as funding
@@ -113,51 +115,52 @@ fund pool by locking up reward tokens for future distribution
 
 - `start`: time (seconds) at which funding begins to unlock
 
-**Returns**
 
 
 ****
+<br>
 
-`_clean(address token)` (internal)
+**`_clean`**`(address token)` (internal)
 
 
 
 internal function to clean up stale funding schedules
 
 
-**Parameters**  
+*Parameters*  
 - `token`: contract address of reward token to clean up
 
-**Returns**
 
 
 ****
+<br>
 
-`_unlockTokens(address token) → uint256 shares` (internal)
+**`_unlockTokens`**`(address token) → uint256 shares` (internal)
 
 
 
 unlocks reward tokens based on funding schedules
 
 
-**Parameters**  
+*Parameters*  
 - `token`: contract addres of reward token
 
 
-**Returns**
+*Returns*  
 - shares number of shares unlocked
 
 
 ****
+<br>
 
-`_distribute(address user, address token, uint256 shares) → uint256 amount` (internal)
+**`_distribute`**`(address user, address token, uint256 shares) → uint256 amount` (internal)
 
 
 
 distribute reward tokens to user
 
 
-**Parameters**  
+*Parameters*  
 - `user`: address of user receiving rweard
 
 - `token`: contract address of reward token
@@ -165,7 +168,7 @@ distribute reward tokens to user
 - `shares`: number of shares to be distributed
 
 
-**Returns**
+*Returns*  
 - amount number of reward tokens distributed
 
 

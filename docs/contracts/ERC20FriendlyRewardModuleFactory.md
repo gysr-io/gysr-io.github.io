@@ -10,11 +10,11 @@ exclude: true
 categories: [contract]
 ---
 
-### ERC20 friendly reward module factory
+ERC20 friendly reward module factory
 
 
 
-`ERC20FriendlyRewardModuleFactory`
+**`ERC20FriendlyRewardModuleFactory`**
 
 this factory contract handles deployment for the
 ERC20FriendlyRewardModule contract
@@ -26,20 +26,23 @@ for parsing constructor arguments before creating a new contract
 
 
 
-****
 
-`createModule(bytes data) → address` (external)
+
+****
+<br>
+
+**`createModule`**`(bytes data) → address` (external)
 
 create a new Pool module
 
 
 
 
-**Parameters**  
+*Parameters*  
 - `data`: binary encoded construction parameters
 
 
-**Returns**
+*Returns*  
 - address of newly created module
 
 

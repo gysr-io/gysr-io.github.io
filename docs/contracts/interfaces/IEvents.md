@@ -7,11 +7,11 @@ exclude: true
 categories: [contract]
 ---
 
-### GYSR event system
+GYSR event system
 
 
 
-`IEvents`
+**`IEvents`**
 
 common interface to define GYSR event system
 
@@ -20,7 +20,12 @@ common interface to define GYSR event system
 
 
 
+
 ****
+<br>
+
+*Events*  
+
 
 `Staked(address user, address token, uint256 amount, uint256 shares)`
 
@@ -29,16 +34,12 @@ common interface to define GYSR event system
 
 
 
-****
-
 `Unstaked(address user, address token, uint256 amount, uint256 shares)`
 
 
 
 
 
-
-****
 
 `Claimed(address user, address token, uint256 amount, uint256 shares)`
 
@@ -47,16 +48,12 @@ common interface to define GYSR event system
 
 
 
-****
-
 `RewardsDistributed(address user, address token, uint256 amount, uint256 shares)`
 
 
 
 
 
-
-****
 
 `RewardsFunded(address token, uint256 amount, uint256 shares, uint256 timestamp)`
 
@@ -65,16 +62,12 @@ common interface to define GYSR event system
 
 
 
-****
-
 `RewardsUnlocked(address token, uint256 shares)`
 
 
 
 
 
-
-****
 
 `RewardsExpired(address token, uint256 amount, uint256 shares, uint256 timestamp)`
 
@@ -83,8 +76,6 @@ common interface to define GYSR event system
 
 
 
-****
-
 `GysrSpent(address user, uint256 amount)`
 
 
@@ -92,16 +83,12 @@ common interface to define GYSR event system
 
 
 
-****
-
 `GysrVested(address user, uint256 amount)`
 
 
 
 
 
-
-****
 
 `GysrWithdrawn(uint256 amount)`
 
