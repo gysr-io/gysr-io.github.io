@@ -1,21 +1,21 @@
 ---
 layout: page
-title: IStakingModule
-description: "this contract defines the common interface that any staking module
-must implement to be compatible with the modular Pool architecture."
-permalink: /docs/IStakingModule/
+title: AssignmentStakingModule
+description: "this staking module allows an administrator to set a fixed rate of
+earnings for a specific user."
+permalink: /docs/AssignmentStakingModule/
 exclude: true
 categories: [contract]
 ---
 
-Staking module interface
+Assignment staking module
 
 
 
-**`IStakingModule`**
+**`AssignmentStakingModule`**
 
-this contract defines the common interface that any staking module
-must implement to be compatible with the modular Pool architecture.
+this staking module allows an administrator to set a fixed rate of
+earnings for a specific user.
 
 
 
@@ -26,7 +26,21 @@ must implement to be compatible with the modular Pool architecture.
 ****
 <br>
 
-**`tokens`**`() → address[]` (external)
+**`constructor`**`(address factory_)` (public)
+
+
+
+
+
+*Parameters*  
+- `factory_`: address of module factory
+
+
+
+****
+<br>
+
+**`tokens`**`() → address[] tokens_` (external)
 
 
 
@@ -40,7 +54,7 @@ must implement to be compatible with the modular Pool architecture.
 ****
 <br>
 
-**`balances`**`(address user) → uint256[]` (external)
+**`balances`**`(address user) → uint256[] balances_` (external)
 
 get balance of user
 
@@ -72,7 +86,7 @@ get balance of user
 ****
 <br>
 
-**`totals`**`() → uint256[]` (external)
+**`totals`**`() → uint256[] totals_` (external)
 
 get total staked amount
 
@@ -137,7 +151,7 @@ unstake an amount of tokens for user
 ****
 <br>
 
-**`claim`**`(address sender, uint256 amount, bytes data) → bytes32, address, uint256` (external)
+**`claim`**`(address sender, uint256 amount, bytes) → bytes32, address, uint256` (external)
 
 quote the share value for an amount of tokens without unstaking
 
@@ -163,7 +177,7 @@ quote the share value for an amount of tokens without unstaking
 ****
 <br>
 
-**`update`**`(address sender, bytes data) → bytes32` (external)
+**`update`**`(address sender, bytes) → bytes32` (external)
 
 method called by anyone to update accounting
 
@@ -184,7 +198,7 @@ will only be called ad hoc and should not contain essential logic
 ****
 <br>
 
-**`clean`**`(bytes data)` (external)
+**`clean`**`(bytes)` (external)
 
 method called by owner to clean up and perform additional accounting
 

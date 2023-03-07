@@ -1,23 +1,23 @@
 ---
 layout: page
-title: ERC721StakingModuleFactory
+title: ERC20LinearRewardModuleFactory
 description: "this factory contract handles deployment for the
-ERC721StakingModule contract
+ERC20LinearRewardModule contract
 
 "
-permalink: /docs/ERC721StakingModuleFactory/
+permalink: /docs/ERC20LinearRewardModuleFactory/
 exclude: true
 categories: [contract]
 ---
 
-ERC721 staking module factory
+ERC20 linear reward module factory
 
 
 
-**`ERC721StakingModuleFactory`**
+**`ERC20LinearRewardModuleFactory`**
 
 this factory contract handles deployment for the
-ERC721StakingModule contract
+ERC20LinearRewardModule contract
 
 
 
@@ -31,7 +31,7 @@ for parsing constructor arguments before creating a new contract
 ****
 <br>
 
-**`createModule`**`(address, bytes data) → address` (external)
+**`createModule`**`(address config, bytes data) → address` (external)
 
 create a new Pool module
 

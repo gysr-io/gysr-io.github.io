@@ -58,7 +58,7 @@ convenience function to get token metadata in a single call
 ****
 <br>
 
-**`rewards`**`(address module, address addr, uint256 shares) → uint256[] rewards_` (public)
+**`rewards`**`(address module, bytes32 account, uint256 shares, bytes) → uint256[] rewards_` (public)
 
 generic function to get pending reward balances
 
@@ -68,7 +68,7 @@ generic function to get pending reward balances
 *Parameters*  
 - `module`: address of reward module
 
-- `addr`: account address of interest for preview
+- `account`: bytes32 account of interest for preview
 
 - `shares`: number of shares that would be used
 
@@ -80,7 +80,7 @@ generic function to get pending reward balances
 ****
 <br>
 
-**`preview`**`(address module, address addr, uint256 shares) → uint256, uint256, uint256` (public)
+**`preview`**`(address module, bytes32 account, uint256 shares) → uint256, uint256, uint256` (public)
 
 preview estimated rewards
 
@@ -90,7 +90,7 @@ preview estimated rewards
 *Parameters*  
 - `module`: address of reward module
 
-- `addr`: account address of interest for preview
+- `account`: bytes32 account of interest for preview
 
 - `shares`: number of shares that would be unstaked
 

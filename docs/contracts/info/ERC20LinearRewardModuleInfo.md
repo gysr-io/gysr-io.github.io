@@ -1,21 +1,21 @@
 ---
 layout: page
-title: ERC20CompetitiveRewardModuleInfo
+title: ERC20LinearRewardModuleInfo
 description: "this library provides read-only convenience functions to query
-additional information about the ERC20CompetitiveRewardModule contract."
-permalink: /docs/ERC20CompetitiveRewardModuleInfo/
+additional information about the ERC20LinearRewardModule contract."
+permalink: /docs/ERC20LinearRewardModuleInfo/
 exclude: true
 categories: [contract]
 ---
 
-ERC20 competitive reward module info library
+ERC20 linear reward module info library
 
 
 
-**`ERC20CompetitiveRewardModuleInfo`**
+**`ERC20LinearRewardModuleInfo`**
 
 this library provides read-only convenience functions to query
-additional information about the ERC20CompetitiveRewardModule contract.
+additional information about the ERC20LinearRewardModule contract.
 
 
 
@@ -80,7 +80,7 @@ generic function to get pending reward balances
 ****
 <br>
 
-**`preview`**`(address module, bytes32 account, uint256 shares, uint256 gysr) → uint256, uint256, uint256` (public)
+**`preview`**`(address module, bytes32 account) → uint256` (public)
 
 preview estimated rewards
 
@@ -92,25 +92,17 @@ preview estimated rewards
 
 - `account`: bytes32 account of interest for preview
 
-- `shares`: number of shares that would be unstaked
-
-- `gysr`: number of GYSR tokens that would be applied
-
 
 *Returns*  
 - estimated reward
-
-- estimated time multiplier
-
-- estimated gysr multiplier
 
 
 ****
 <br>
 
-**`unlocked`**`(address module) → uint256` (public)
+**`runway`**`(address module) → uint256` (public)
 
-compute effective unlocked rewards
+compute effective runway with current budget and reward rate
 
 
 
@@ -120,48 +112,28 @@ compute effective unlocked rewards
 
 
 *Returns*  
-- estimated current unlocked rewards
+- estimated runway in seconds
 
 
 ****
 <br>
 
-**`userShareSeconds`**`(address module, bytes32 account, uint256 shares) → uint256, uint256` (public)
+**`validate`**`(address module, uint256 shares) → bool, uint256` (public)
 
-compute user share seconds for given number of shares
-
-
-
-
-*Parameters*  
-- `module`: module contract address
-
-- `account`: user account
-
-- `shares`: number of shares
-
-
-*Returns*  
-- raw share seconds
-
-- time bonus share seconds
-
-
-****
-<br>
-
-**`totalShareSeconds`**`(address module) → uint256` (public)
-
-compute total expected share seconds for a rewards module
+check potential increase in shares for sufficient budget and runway
 
 
 
 
 *Parameters*  
-- `module`: address for reward module
+- `module`: address of reward module
+
+- `shares`: number of shares to be staked
 
 
 *Returns*  
-- expected total shares seconds
+- okay if stake amount is within budget for time period
+
+- estimated runway in seconds
 
 

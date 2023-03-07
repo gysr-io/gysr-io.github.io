@@ -69,7 +69,7 @@ register factory to info module
 ****
 <br>
 
-**`rewards`**`(address pool, address addr) → uint256[] rewards_` (public)
+**`rewards`**`(address pool, address addr, bytes stakingdata, bytes rewarddata) → uint256[] rewards_` (public)
 
 get pending rewards for arbitrary Pool and user pair
 
@@ -80,6 +80,10 @@ get pending rewards for arbitrary Pool and user pair
 - `pool`: address of Pool contract
 
 - `addr`: address of user for preview
+
+- `stakingdata`: additional data passed to staking module info library
+
+- `rewarddata`: additional data passed to reward module info library
 
 
 

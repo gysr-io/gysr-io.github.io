@@ -1,23 +1,28 @@
 ---
 layout: page
-title: IRewardModule
-description: "this contract defines the common interface that any reward module
-must implement to be compatible with the modular Pool architecture."
-permalink: /docs/IRewardModule/
+title: ERC20LinearRewardModule
+description: "this reward module distributes a single ERC20 token at a continuous fixed rate.
+
+"
+permalink: /docs/ERC20LinearRewardModule/
 exclude: true
 categories: [contract]
 ---
 
-Reward module interface
+ERC20 linear reward module
 
 
 
-**`IRewardModule`**
+**`ERC20LinearRewardModule`**
 
-this contract defines the common interface that any reward module
-must implement to be compatible with the modular Pool architecture.
+this reward module distributes a single ERC20 token at a continuous fixed rate.
 
 
+
+the linear reward module provides a guarantee that a constant reward rate
+will be earned over a specified time period. This can be used to create
+incentive mechanisms such as streaming payroll, equity vesting, fixed rate
+yield farms, and more.
 
 
 
@@ -26,7 +31,29 @@ must implement to be compatible with the modular Pool architecture.
 ****
 <br>
 
-**`tokens`**`() → address[]` (external)
+**`constructor`**`(address token_, uint256 period_, uint256 rate_, address config_, address factory_)` (public)
+
+
+
+
+
+*Parameters*  
+- `token_`: the token that will be rewarded
+
+- `period_`: time period (seconds)
+
+- `rate_`: constant reward rate (shares / share second)
+
+- `config_`: address for configuration contract
+
+- `factory_`: address of module factory
+
+
+
+****
+<br>
+
+**`tokens`**`() → address[] tokens_` (external)
 
 
 
@@ -40,7 +67,7 @@ must implement to be compatible with the modular Pool architecture.
 ****
 <br>
 
-**`balances`**`() → uint256[]` (external)
+**`balances`**`() → uint256[] balances_` (external)
 
 
 
@@ -82,7 +109,7 @@ must implement to be compatible with the modular Pool architecture.
 ****
 <br>
 
-**`stake`**`(bytes32 account, address sender, uint256 shares, bytes data) → uint256, uint256` (external)
+**`stake`**`(bytes32 account, address, uint256 shares, bytes) → uint256, uint256` (external)
 
 perform any necessary accounting for new stake
 
@@ -108,7 +135,7 @@ perform any necessary accounting for new stake
 ****
 <br>
 
-**`unstake`**`(bytes32 account, address sender, address receiver, uint256 shares, bytes data) → uint256, uint256` (external)
+**`unstake`**`(bytes32 account, address, address receiver, uint256 shares, bytes) → uint256, uint256` (external)
 
 reward user and perform any necessary accounting for unstake
 
@@ -136,7 +163,7 @@ reward user and perform any necessary accounting for unstake
 ****
 <br>
 
-**`claim`**`(bytes32 account, address sender, address receiver, uint256 shares, bytes data) → uint256, uint256` (external)
+**`claim`**`(bytes32 account, address, address receiver, uint256, bytes) → uint256, uint256` (external)
 
 reward user and perform and necessary accounting for existing stake
 
@@ -164,7 +191,7 @@ reward user and perform and necessary accounting for existing stake
 ****
 <br>
 
-**`update`**`(bytes32 account, address sender, bytes data)` (external)
+**`update`**`(bytes32, address, bytes)` (external)
 
 method called by anyone to update accounting
 
@@ -184,7 +211,7 @@ will only be called ad hoc and should not contain essential logic
 ****
 <br>
 
-**`clean`**`(bytes data)` (external)
+**`clean`**`(bytes)` (external)
 
 method called by owner to clean up and perform additional accounting
 
@@ -194,6 +221,37 @@ will only be called ad hoc and should not contain any essential logic
 
 *Parameters*  
 - `data`: additional data
+
+
+
+****
+<br>
+
+**`fund`**`(uint256 amount)` (external)
+
+fund module by depositing reward tokens
+
+
+this is a public method callable by any account or contract
+
+
+*Parameters*  
+- `amount`: number of reward tokens to deposit
+
+
+
+****
+<br>
+
+**`withdraw`**`(uint256 amount)` (external)
+
+withdraw uncommited reward tokens from module
+
+
+
+
+*Parameters*  
+- `amount`: number of reward tokens to withdraw
 
 
 

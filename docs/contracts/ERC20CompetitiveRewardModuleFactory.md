@@ -31,7 +31,7 @@ for parsing constructor arguments before creating a new contract
 ****
 <br>
 
-**`createModule`**`(bytes data) → address` (external)
+**`createModule`**`(address config, bytes data) → address` (external)
 
 create a new Pool module
 
@@ -39,6 +39,8 @@ create a new Pool module
 
 
 *Parameters*  
+- `config`: address for configuration contract
+
 - `data`: binary encoded construction parameters
 
 

@@ -193,24 +193,34 @@ claim rewards without unstaking
 ****
 <br>
 
-**`update`**`()` (external)
+**`update`**`(bytes stakingdata, bytes rewarddata)` (external)
 
 method called ad hoc to update user accounting
 
 
 
 
+*Parameters*  
+- `stakingdata`: data passed to staking module
+
+- `rewarddata`: data passed to reward module
+
 
 
 ****
 <br>
 
-**`clean`**`()` (external)
+**`clean`**`(bytes stakingdata, bytes rewarddata)` (external)
 
 method called ad hoc to clean up and perform additional accounting
 
 
 
+
+*Parameters*  
+- `stakingdata`: data passed to staking module
+
+- `rewarddata`: data passed to reward module
 
 
 
@@ -240,6 +250,51 @@ withdraw GYSR tokens applied during unstaking
 
 *Parameters*  
 - `amount`: number of GYSR to withdraw
+
+
+
+****
+<br>
+
+**`transferControlStakingModule`**`(address newController)` (external)
+
+transfer control of the staking module to another account
+
+
+
+
+*Parameters*  
+- `newController`: address of new controller
+
+
+
+****
+<br>
+
+**`transferControlRewardModule`**`(address newController)` (external)
+
+transfer control of the reward module to another account
+
+
+
+
+*Parameters*  
+- `newController`: address of new controller
+
+
+
+****
+<br>
+
+**`multicall`**`(bytes[] data) → bytes[] results` (external)
+
+execute multiple operations in a single call
+
+
+
+
+*Parameters*  
+- `data`: array of encoded function data
 
 
 

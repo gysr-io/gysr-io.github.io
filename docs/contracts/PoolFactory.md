@@ -25,8 +25,7 @@ it relies on a system of sub-factories which are responsible for the
 creation of underlying staking and reward modules. This primary factory
 calls each module factory and assembles the overall Pool contract.
 
-this contract also manages various privileged platform settings including
-treasury address, fee amount, and module factory whitelist.
+this contract also manages the module factory whitelist.
 
 
 
@@ -35,7 +34,7 @@ treasury address, fee amount, and module factory whitelist.
 ****
 <br>
 
-**`constructor`**`(address gysr_, address treasury_)` (public)
+**`constructor`**`(address gysr_, address config_)` (public)
 
 
 
@@ -43,6 +42,8 @@ treasury address, fee amount, and module factory whitelist.
 
 *Parameters*  
 - `gysr_`: address of GYSR token
+
+- `config_`: address of configuration contract
 
 
 
@@ -68,64 +69,6 @@ create a new Pool
 
 *Returns*  
 - address of newly created Pool
-
-
-****
-<br>
-
-**`treasury`**`() → address` (external)
-
-
-
-
-
-
-*Returns*  
-- GYSR treasury address
-
-
-****
-<br>
-
-**`fee`**`() → uint256` (external)
-
-
-
-
-
-
-*Returns*  
-- GYSR spending fee
-
-
-****
-<br>
-
-**`setTreasury`**`(address treasury_)` (external)
-
-update the GYSR treasury address
-
-
-
-
-*Parameters*  
-- `treasury_`: new value for treasury address
-
-
-
-****
-<br>
-
-**`setFee`**`(uint256 fee_)` (external)
-
-update the global GYSR spending fee
-
-
-
-
-*Parameters*  
-- `fee_`: new value for GYSR spending fee
-
 
 
 ****
@@ -166,20 +109,6 @@ set the whitelist status of a module factory
 
 
 `PoolCreated(address user, address pool)`
-
-
-
-
-
-
-`FeeUpdated(uint256 previous, uint256 updated)`
-
-
-
-
-
-
-`TreasuryUpdated(address previous, address updated)`
 
 
 

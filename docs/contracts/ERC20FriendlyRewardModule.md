@@ -33,7 +33,7 @@ staking to receive a multiplier on their earning rate.
 ****
 <br>
 
-**`constructor`**`(address token_, uint256 vestingStart_, uint256 vestingPeriod_, address factory_)` (public)
+**`constructor`**`(address token_, uint256 vestingStart_, uint256 vestingPeriod_, address config_, address factory_)` (public)
 
 
 
@@ -45,6 +45,8 @@ staking to receive a multiplier on their earning rate.
 - `vestingStart_`: minimum ratio earned
 
 - `vestingPeriod_`: period (in seconds) over which investors vest to 100%
+
+- `config_`: address for configuration contract
 
 - `factory_`: address of module factory
 
@@ -109,7 +111,7 @@ staking to receive a multiplier on their earning rate.
 ****
 <br>
 
-**`stake`**`(address account, address user, uint256 shares, bytes data) → uint256, uint256` (external)
+**`stake`**`(bytes32 account, address sender, uint256 shares, bytes data) → uint256, uint256` (external)
 
 perform any necessary accounting for new stake
 
@@ -117,9 +119,9 @@ perform any necessary accounting for new stake
 
 
 *Parameters*  
-- `account`: address of staking account
+- `account`: bytes32 id of staking account
 
-- `user`: address of user
+- `sender`: address of sender
 
 - `shares`: number of new shares minted
 
@@ -135,7 +137,7 @@ perform any necessary accounting for new stake
 ****
 <br>
 
-**`_stake`**`(address account, address user, uint256 shares, bytes data) → uint256, uint256` (internal)
+**`_stake`**`(bytes32 account, address sender, uint256 shares, bytes data) → uint256, uint256` (internal)
 
 internal implementation of stake method
 
@@ -143,9 +145,9 @@ internal implementation of stake method
 
 
 *Parameters*  
-- `account`: address of staking account
+- `account`: bytes32 id of staking account
 
-- `user`: address of user
+- `sender`: address of sender
 
 - `shares`: number of new shares minted
 
@@ -161,7 +163,7 @@ internal implementation of stake method
 ****
 <br>
 
-**`unstake`**`(address account, address user, uint256 shares, bytes) → uint256, uint256` (external)
+**`unstake`**`(bytes32 account, address sender, address receiver, uint256 shares, bytes) → uint256, uint256` (external)
 
 reward user and perform any necessary accounting for unstake
 
@@ -169,9 +171,11 @@ reward user and perform any necessary accounting for unstake
 
 
 *Parameters*  
-- `account`: address of staking account
+- `account`: bytes32 id of staking account
 
-- `user`: address of user
+- `sender`: address of sender
+
+- `receiver`: address of reward receiver
 
 - `shares`: number of shares burned
 
@@ -187,7 +191,7 @@ reward user and perform any necessary accounting for unstake
 ****
 <br>
 
-**`_unstake`**`(address account, address user, uint256 shares) → uint256, uint256` (internal)
+**`_unstake`**`(bytes32 account, address sender, address receiver, uint256 shares) → uint256, uint256` (internal)
 
 internal implementation of unstake
 
@@ -195,9 +199,11 @@ internal implementation of unstake
 
 
 *Parameters*  
-- `account`: address of staking account
+- `account`: bytes32 of staking account
 
-- `user`: address of user
+- `sender`: address of sender
+
+- `receiver`: address of reward receiver
 
 - `shares`: number of shares burned
 
@@ -211,7 +217,7 @@ internal implementation of unstake
 ****
 <br>
 
-**`claim`**`(address account, address user, uint256 shares, bytes data) → uint256 spent, uint256 vested` (external)
+**`claim`**`(bytes32 account, address sender, address receiver, uint256 shares, bytes data) → uint256 spent, uint256 vested` (external)
 
 reward user and perform and necessary accounting for existing stake
 
@@ -219,13 +225,15 @@ reward user and perform and necessary accounting for existing stake
 
 
 *Parameters*  
-- `account`: address of staking account
+- `account`: bytes32 id of staking account
 
-- `user`: address of user
+- `sender`: address of sender
+
+- `receiver`: address of reward receiver
 
 - `shares`: number of shares being claimed against
 
-- `data`: addtional data
+- `data`: additional data
 
 
 *Returns*  
@@ -277,23 +285,27 @@ compute vesting multiplier as function of staking time
 ****
 <br>
 
-**`update`**`(address)` (external)
+**`update`**`(bytes32, address, bytes)` (external)
 
 method called by anyone to update accounting
 
 
 will only be called ad hoc and should not contain essential logic
 
-*Parameters*  
-- `user`: address of user for update
 
+*Parameters*  
+- `account`: bytes32 id of staking account for update
+
+- `sender`: address of sender
+
+- `data`: additional data
 
 
 
 ****
 <br>
 
-**`clean`**`()` (external)
+**`clean`**`(bytes)` (external)
 
 method called ad hoc to clean up and perform additional accounting
 
@@ -308,7 +320,7 @@ will only be called manually, and should not contain any essential logic
 
 **`fund`**`(uint256 amount, uint256 duration)` (external)
 
-fund Geyser by locking up reward tokens for distribution
+fund module by locking up reward tokens for distribution
 
 
 
@@ -325,7 +337,7 @@ fund Geyser by locking up reward tokens for distribution
 
 **`fund`**`(uint256 amount, uint256 duration, uint256 start)` (external)
 
-fund Geyser by locking up reward tokens for distribution
+fund module by locking up reward tokens for distribution
 
 
 
@@ -370,14 +382,14 @@ fund Geyser by locking up reward tokens for distribution
 ****
 <br>
 
-**`stakeCount`**`(address addr) → uint256` (public)
+**`stakeCount`**`(bytes32 account) → uint256` (public)
 
 
 
 
 
 *Parameters*  
-- `addr`: address of interest
+- `account`: bytes32 id for account of interest
 
 
 *Returns*  

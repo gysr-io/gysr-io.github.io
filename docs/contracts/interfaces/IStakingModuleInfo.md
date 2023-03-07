@@ -26,9 +26,9 @@ must implement to be compatible with the modular Pool architecture.
 ****
 <br>
 
-**`token`**`(address module) → address, string, string, uint8` (external)
+**`tokens`**`(address module) → address[], string[], string[], uint8[]` (external)
 
-convenience function to get token metadata in a single call
+convenience function to get all token metadata in a single call
 
 
 
@@ -42,9 +42,9 @@ convenience function to get token metadata in a single call
 ****
 <br>
 
-**`shares`**`(address module, address addr, uint256 amount) → uint256` (external)
+**`positions`**`(address module, address addr, bytes data) → bytes32[], uint256[]` (external)
 
-quote the share value for an amount of tokens
+get all staking positions for user
 
 
 
@@ -52,26 +52,10 @@ quote the share value for an amount of tokens
 *Parameters*  
 - `module`: address of staking module
 
-- `addr`: account address of interest
+- `addr`: user address of interest
 
-- `amount`: number of tokens. if zero, return entire share balance
-
-
-*Returns*  
-- number of shares
+- `data`: additional encoded data
 
 
-****
-<br>
-
-**`sharesPerToken`**`(address module) → uint256` (external)
-
-
-
-
-
-
-*Returns*  
-- current shares per token
 
 

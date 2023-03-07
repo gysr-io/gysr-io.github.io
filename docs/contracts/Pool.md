@@ -28,7 +28,7 @@ staking and reward logic is contained in child contracts.
 ****
 <br>
 
-**`constructor`**`(address staking_, address reward_, address gysr_, address factory_)` (public)
+**`constructor`**`(address staking_, address reward_, address gysr_, address config_)` (public)
 
 
 
@@ -41,7 +41,7 @@ staking and reward logic is contained in child contracts.
 
 - `gysr_`: address for GYSR token
 
-- `factory_`: address for parent factory
+- `config_`: address for configuration contract
 
 
 
@@ -217,24 +217,34 @@ claim rewards without unstaking
 ****
 <br>
 
-**`update`**`()` (external)
+**`update`**`(bytes stakingdata, bytes rewarddata)` (external)
 
 method called ad hoc to update user accounting
 
 
 
 
+*Parameters*  
+- `stakingdata`: data passed to staking module
+
+- `rewarddata`: data passed to reward module
+
 
 
 ****
 <br>
 
-**`clean`**`()` (external)
+**`clean`**`(bytes stakingdata, bytes rewarddata)` (external)
 
 method called ad hoc to clean up and perform additional accounting
 
 
 
+
+*Parameters*  
+- `stakingdata`: data passed to staking module
+
+- `rewarddata`: data passed to reward module
 
 
 
@@ -270,15 +280,45 @@ withdraw GYSR tokens applied during unstaking
 ****
 <br>
 
-**`transferControl`**`(address newController)` (public)
+**`transferControlStakingModule`**`(address newController)` (external)
 
-transfer control of the Pool and modules to another account
+transfer control of the staking module to another account
 
 
 
 
 *Parameters*  
 - `newController`: address of new controller
+
+
+
+****
+<br>
+
+**`transferControlRewardModule`**`(address newController)` (external)
+
+transfer control of the reward module to another account
+
+
+
+
+*Parameters*  
+- `newController`: address of new controller
+
+
+
+****
+<br>
+
+**`multicall`**`(bytes[] data) → bytes[] results` (external)
+
+execute multiple operations in a single call
+
+
+
+
+*Parameters*  
+- `data`: array of encoded function data
 
 
 

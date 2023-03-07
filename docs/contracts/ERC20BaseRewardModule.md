@@ -99,7 +99,7 @@ compute number of unlockable shares for a specific funding schedule
 ****
 <br>
 
-**`_fund`**`(address token, uint256 amount, uint256 duration, uint256 start)` (internal)
+**`_fund`**`(address token, uint256 amount, uint256 duration, uint256 start, address feeReceiver, uint256 feeRate)` (internal)
 
 fund pool by locking up reward tokens for future distribution
 
@@ -114,6 +114,10 @@ fund pool by locking up reward tokens for future distribution
 - `duration`: period (seconds) over which funding will be unlocked
 
 - `start`: time (seconds) at which funding begins to unlock
+
+- `feeReceiver`: address to receive funding fee
+
+- `feeRate`: portion of funding amount to take as fee
 
 
 

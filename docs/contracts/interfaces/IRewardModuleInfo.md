@@ -42,7 +42,7 @@ get all token metadata
 ****
 <br>
 
-**`rewards`**`(address module, address addr, uint256 shares) → uint256[]` (external)
+**`rewards`**`(address module, bytes32 account, uint256 shares, bytes data) → uint256[]` (external)
 
 generic function to get pending reward balances
 
@@ -52,9 +52,11 @@ generic function to get pending reward balances
 *Parameters*  
 - `module`: address of reward module
 
-- `addr`: account address of interest for preview
+- `account`: bytes32 account of interest for preview
 
 - `shares`: number of shares that would be used
+
+- `data`: additional encoded data
 
 
 *Returns*  

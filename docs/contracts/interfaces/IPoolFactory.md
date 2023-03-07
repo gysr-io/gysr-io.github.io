@@ -26,21 +26,31 @@ the Pool contract to interact with
 ****
 <br>
 
-**`treasury`**`() → address` (external)
+**`create`**`(address staking, address reward, bytes stakingdata, bytes rewarddata) → address` (external)
+
+create a new Pool
 
 
 
 
+*Parameters*  
+- `staking`: address of factory that will be used to create staking module
+
+- `reward`: address of factory that will be used to create reward module
+
+- `stakingdata`: construction data for staking module factory
+
+- `rewarddata`: construction data for reward module factory
 
 
 *Returns*  
-- GYSR treasury address
+- address of newly created Pool
 
 
 ****
 <br>
 
-**`fee`**`() → uint256` (external)
+**`map`**`(address) → bool` (external)
 
 
 
@@ -48,6 +58,20 @@ the Pool contract to interact with
 
 
 *Returns*  
-- GYSR spending fee
+- true if address is a pool created by the factory
+
+
+****
+<br>
+
+**`list`**`(uint256) → address` (external)
+
+
+
+
+
+
+*Returns*  
+- address of the nth pool created by the factory
 
 

@@ -105,7 +105,7 @@ get total staked amount
 ****
 <br>
 
-**`stake`**`(address user, uint256 amount, bytes data) → address, uint256` (external)
+**`stake`**`(address sender, uint256 amount, bytes data) → bytes32, uint256` (external)
 
 stake an amount of tokens for user
 
@@ -113,7 +113,7 @@ stake an amount of tokens for user
 
 
 *Parameters*  
-- `user`: address of user
+- `sender`: address of sender
 
 - `amount`: number of tokens to stake
 
@@ -121,7 +121,7 @@ stake an amount of tokens for user
 
 
 *Returns*  
-- address of staking account
+- bytes32 id of staking account
 
 - number of shares minted for stake
 
@@ -129,7 +129,7 @@ stake an amount of tokens for user
 ****
 <br>
 
-**`unstake`**`(address user, uint256 amount, bytes data) → address, uint256` (external)
+**`unstake`**`(address sender, uint256 amount, bytes data) → bytes32, address, uint256` (external)
 
 unstake an amount of tokens for user
 
@@ -137,7 +137,7 @@ unstake an amount of tokens for user
 
 
 *Parameters*  
-- `user`: address of user
+- `sender`: address of sender
 
 - `amount`: number of tokens to unstake
 
@@ -145,7 +145,9 @@ unstake an amount of tokens for user
 
 
 *Returns*  
-- address of staking account
+- bytes32 id of staking account
+
+- address of reward receiver
 
 - number of shares burned for unstake
 
@@ -153,7 +155,7 @@ unstake an amount of tokens for user
 ****
 <br>
 
-**`claim`**`(address user, uint256 amount, bytes) → address, uint256` (external)
+**`claim`**`(address sender, uint256 amount, bytes) → bytes32, address, uint256` (external)
 
 quote the share value for an amount of tokens without unstaking
 
@@ -161,7 +163,7 @@ quote the share value for an amount of tokens without unstaking
 
 
 *Parameters*  
-- `user`: address of user
+- `sender`: address of sender
 
 - `amount`: number of tokens to claim with
 
@@ -169,7 +171,9 @@ quote the share value for an amount of tokens without unstaking
 
 
 *Returns*  
-- address of staking account
+- bytes32 id of staking account
+
+- address of reward receiver
 
 - number of shares that the claim amount is worth
 
@@ -177,29 +181,37 @@ quote the share value for an amount of tokens without unstaking
 ****
 <br>
 
-**`update`**`(address)` (external)
+**`update`**`(address sender, bytes) → bytes32` (external)
 
 method called by anyone to update accounting
 
 
 will only be called ad hoc and should not contain essential logic
 
+
 *Parameters*  
-- `user`: address of user for update
+- `sender`: address of user for update
+
+- `data`: additional data
 
 
+*Returns*  
+- bytes32 id of staking account
 
 
 ****
 <br>
 
-**`clean`**`()` (external)
+**`clean`**`(bytes)` (external)
 
 method called by owner to clean up and perform additional accounting
 
 
 will only be called ad hoc and should not contain any essential logic
 
+
+*Parameters*  
+- `data`: additional data
 
 
 

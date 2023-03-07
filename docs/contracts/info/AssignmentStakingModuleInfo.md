@@ -1,21 +1,21 @@
 ---
 layout: page
-title: ERC721StakingModuleInfo
+title: AssignmentStakingModuleInfo
 description: "this library provides read-only convenience functions to query
-additional information about the ERC721StakingModule contract."
-permalink: /docs/ERC721StakingModuleInfo/
+additional information about the ERC20StakingModule contract."
+permalink: /docs/AssignmentStakingModuleInfo/
 exclude: true
 categories: [contract]
 ---
 
-ERC721 staking module info library
+Assignment staking module info library
 
 
 
-**`ERC721StakingModuleInfo`**
+**`AssignmentStakingModuleInfo`**
 
 this library provides read-only convenience functions to query
-additional information about the ERC721StakingModule contract.
+additional information about the ERC20StakingModule contract.
 
 
 
@@ -28,7 +28,7 @@ additional information about the ERC721StakingModule contract.
 
 **`tokens`**`(address module) → address[] addresses_, string[] names_, string[] symbols_, uint8[] decimals_` (external)
 
-convenience function to get all token metadata in a single call
+convenient function to get all token metadata in a single call
 
 
 
@@ -62,22 +62,6 @@ get all staking positions for user
 ****
 <br>
 
-**`token`**`(address module) → address, string, string, uint8` (public)
-
-convenience function to get token metadata in a single call
-
-
-
-
-*Parameters*  
-- `module`: address of staking module
-
-
-
-
-****
-<br>
-
 **`shares`**`(address module, address addr, uint256 amount) → uint256` (public)
 
 quote the share value for an amount of tokens
@@ -102,7 +86,7 @@ quote the share value for an amount of tokens
 
 **`sharesPerToken`**`(address module) → uint256` (public)
 
-get shares per token
+get shares per unit
 
 
 
@@ -113,29 +97,5 @@ get shares per token
 
 *Returns*  
 - current shares per token
-
-
-****
-<br>
-
-**`tokenIds`**`(address module, address addr, uint256 amount, uint256 start) → uint256[] ids` (public)
-
-get staked token ids for user
-
-
-
-
-*Parameters*  
-- `module`: address of staking module
-
-- `addr`: account address of interest
-
-- `amount`: number of tokens to enumerate
-
-- `start`: token index to start at
-
-
-*Returns*  
-- ids array of token ids
 
 

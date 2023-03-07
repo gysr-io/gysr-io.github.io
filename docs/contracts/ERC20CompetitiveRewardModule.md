@@ -35,7 +35,7 @@ h/t https://github.com/ampleforth/token-geyser
 ****
 <br>
 
-**`constructor`**`(address token_, uint256 bonusMin_, uint256 bonusMax_, uint256 bonusPeriod_, address factory_)` (public)
+**`constructor`**`(address token_, uint256 bonusMin_, uint256 bonusMax_, uint256 bonusPeriod_, address config_, address factory_)` (public)
 
 
 
@@ -49,6 +49,8 @@ h/t https://github.com/ampleforth/token-geyser
 - `bonusMax_`: maximum time bonus
 
 - `bonusPeriod_`: period (in seconds) over which time bonus grows to max
+
+- `config_`: address for configuration contract
 
 - `factory_`: address of module factory
 
@@ -113,7 +115,7 @@ h/t https://github.com/ampleforth/token-geyser
 ****
 <br>
 
-**`stake`**`(address account, address, uint256 shares, bytes) → uint256, uint256` (external)
+**`stake`**`(bytes32 account, address, uint256 shares, bytes) → uint256, uint256` (external)
 
 perform any necessary accounting for new stake
 
@@ -121,9 +123,9 @@ perform any necessary accounting for new stake
 
 
 *Parameters*  
-- `account`: address of staking account
+- `account`: bytes32 id of staking account
 
-- `user`: address of user
+- `sender`: address of sender
 
 - `shares`: number of new shares minted
 
@@ -139,7 +141,7 @@ perform any necessary accounting for new stake
 ****
 <br>
 
-**`unstake`**`(address account, address user, uint256 shares, bytes data) → uint256, uint256` (external)
+**`unstake`**`(bytes32 account, address sender, address receiver, uint256 shares, bytes data) → uint256, uint256` (external)
 
 reward user and perform any necessary accounting for unstake
 
@@ -147,9 +149,11 @@ reward user and perform any necessary accounting for unstake
 
 
 *Parameters*  
-- `account`: address of staking account
+- `account`: bytes32 id of staking account
 
-- `user`: address of user
+- `sender`: address of sender
+
+- `receiver`: address of reward receiver
 
 - `shares`: number of shares burned
 
@@ -165,7 +169,7 @@ reward user and perform any necessary accounting for unstake
 ****
 <br>
 
-**`claim`**`(address account, address user, uint256 shares, bytes data) → uint256 spent, uint256 vested` (external)
+**`claim`**`(bytes32 account, address sender, address receiver, uint256 shares, bytes data) → uint256 spent, uint256 vested` (external)
 
 reward user and perform and necessary accounting for existing stake
 
@@ -173,13 +177,15 @@ reward user and perform and necessary accounting for existing stake
 
 
 *Parameters*  
-- `account`: address of staking account
+- `account`: bytes32 id of staking account
 
-- `user`: address of user
+- `sender`: address of sender
+
+- `receiver`: address of reward receiver
 
 - `shares`: number of shares being claimed against
 
-- `data`: addtional data
+- `data`: additional data
 
 
 *Returns*  
@@ -191,29 +197,36 @@ reward user and perform and necessary accounting for existing stake
 ****
 <br>
 
-**`update`**`(address)` (external)
+**`update`**`(bytes32, address, bytes)` (external)
 
 method called by anyone to update accounting
 
 
 will only be called ad hoc and should not contain essential logic
 
-*Parameters*  
-- `user`: address of user for update
 
+*Parameters*  
+- `account`: bytes32 id of staking account for update
+
+- `sender`: address of sender
+
+- `data`: additional data
 
 
 
 ****
 <br>
 
-**`clean`**`()` (external)
+**`clean`**`(bytes)` (external)
 
 method called by owner to clean up and perform additional accounting
 
 
 will only be called ad hoc and should not contain any essential logic
 
+
+*Parameters*  
+- `data`: additional data
 
 
 
@@ -302,14 +315,14 @@ compute time bonus earned as a function of staking time
 ****
 <br>
 
-**`stakeCount`**`(address addr) → uint256` (public)
+**`stakeCount`**`(bytes32 account) → uint256` (public)
 
 
 
 
 
 *Parameters*  
-- `addr`: address of interest
+- `account`: bytes32 account of interest
 
 
 *Returns*  

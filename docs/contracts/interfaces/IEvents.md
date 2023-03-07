@@ -27,21 +27,28 @@ common interface to define GYSR event system
 *Events*  
 
 
-`Staked(address user, address token, uint256 amount, uint256 shares)`
+`Staked(bytes32 account, address user, address token, uint256 amount, uint256 shares)`
 
 
 
 
 
 
-`Unstaked(address user, address token, uint256 amount, uint256 shares)`
+`Unstaked(bytes32 account, address user, address token, uint256 amount, uint256 shares)`
 
 
 
 
 
 
-`Claimed(address user, address token, uint256 amount, uint256 shares)`
+`Claimed(bytes32 account, address user, address token, uint256 amount, uint256 shares)`
+
+
+
+
+
+
+`Updated(bytes32 account, address user)`
 
 
 
@@ -62,14 +69,21 @@ common interface to define GYSR event system
 
 
 
-`RewardsUnlocked(address token, uint256 shares)`
-
-
-
-
-
-
 `RewardsExpired(address token, uint256 amount, uint256 shares, uint256 timestamp)`
+
+
+
+
+
+
+`RewardsWithdrawn(address token, uint256 amount, uint256 shares, uint256 timestamp)`
+
+
+
+
+
+
+`RewardsUpdated(bytes32 account)`
 
 
 

@@ -26,6 +26,42 @@ additional information about the ERC20StakingModule contract.
 ****
 <br>
 
+**`tokens`**`(address module) → address[] addresses_, string[] names_, string[] symbols_, uint8[] decimals_` (external)
+
+convenience function to get all token metadata in a single call
+
+
+
+
+*Parameters*  
+- `module`: address of reward module
+
+
+
+
+****
+<br>
+
+**`positions`**`(address module, address addr, bytes data) → bytes32[] accounts_, uint256[] shares_` (external)
+
+get all staking positions for user
+
+
+
+
+*Parameters*  
+- `module`: address of staking module
+
+- `addr`: user address of interest
+
+- `data`: additional encoded data
+
+
+
+
+****
+<br>
+
 **`token`**`(address module) → address, string, string, uint8` (public)
 
 convenience function to get token metadata in a single call
