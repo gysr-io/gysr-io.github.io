@@ -1,21 +1,21 @@
 ---
 layout: page
-title: ERC20LinearRewardModuleInfo
+title: ERC20FixedRewardModuleInfo
 description: "this library provides read-only convenience functions to query
-additional information about the ERC20LinearRewardModule contract."
-permalink: /docs/ERC20LinearRewardModuleInfo/
+additional information about the ERC20FixedRewardModule contract."
+permalink: /docs/ERC20FixedRewardModuleInfo/
 exclude: true
 categories: [contract]
 ---
 
-ERC20 linear reward module info library
+ERC20 fixed reward module info library
 
 
 
-**`ERC20LinearRewardModuleInfo`**
+**`ERC20FixedRewardModuleInfo`**
 
 this library provides read-only convenience functions to query
-additional information about the ERC20LinearRewardModule contract.
+additional information about the ERC20FixedRewardModule contract.
 
 
 
@@ -80,7 +80,7 @@ generic function to get pending reward balances
 ****
 <br>
 
-**`preview`**`(address module, bytes32 account) → uint256` (public)
+**`preview`**`(address module, bytes32 account) → uint256, uint256` (public)
 
 preview estimated rewards
 
@@ -96,13 +96,15 @@ preview estimated rewards
 *Returns*  
 - estimated reward
 
+- estimated time vesting coefficient
+
 
 ****
 <br>
 
-**`runway`**`(address module) → uint256` (public)
+**`budget`**`(address module) → uint256` (public)
 
-compute effective runway with current budget and reward rate
+get effective budget
 
 
 
@@ -112,15 +114,15 @@ compute effective runway with current budget and reward rate
 
 
 *Returns*  
-- estimated runway in seconds
+- estimated budget in debt shares
 
 
 ****
 <br>
 
-**`validate`**`(address module, uint256 shares) → bool, uint256` (public)
+**`validate`**`(address module, uint256 shares) → bool, uint256, uint256` (public)
 
-check potential increase in shares for sufficient budget and runway
+check potential increase in staking shares for sufficient budget
 
 
 
@@ -134,7 +136,9 @@ check potential increase in shares for sufficient budget and runway
 *Returns*  
 - okay if stake amount is within budget for time period
 
-- estimated runway in seconds
+- estimated debt shares allocated
+
+- remaining total debt shares
 
 
 ****
@@ -148,7 +152,7 @@ get withdrawable excess budget
 
 
 *Parameters*  
-- `module`: address of linear reward module
+- `module`: address of reward module
 
 
 *Returns*  
