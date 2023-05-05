@@ -64,7 +64,7 @@ get token amount from shares
 ****
 <br>
 
-**`receiveAmount`**`(contract IERC20 token, uint256 shares, address sender, uint256 amount) → uint256` (internal)
+**`receiveAmount`**`(contract IERC20 token, uint256 total, address sender, uint256 amount) → uint256` (internal)
 
 transfer tokens from sender into contract and convert to shares
 for internal accounting
@@ -75,7 +75,7 @@ for internal accounting
 *Parameters*  
 - `token`: erc20 token interface
 
-- `shares`: current total shares
+- `total`: current total shares
 
 - `sender`: token sender
 
@@ -86,7 +86,7 @@ for internal accounting
 ****
 <br>
 
-**`receiveWithFee`**`(contract IERC20 token, uint256 shares, address sender, uint256 amount, address feeReceiver, uint256 feeRate) → uint256` (internal)
+**`receiveWithFee`**`(contract IERC20 token, uint256 total, address sender, uint256 amount, address feeReceiver, uint256 feeRate) → uint256` (internal)
 
 transfer tokens from sender into contract, process protocol fee,
 and convert to shares for internal accounting
@@ -97,7 +97,7 @@ and convert to shares for internal accounting
 *Parameters*  
 - `token`: erc20 token interface
 
-- `shares`: current total shares
+- `total`: current total shares
 
 - `sender`: token sender
 
@@ -106,6 +106,18 @@ and convert to shares for internal accounting
 - `feeReceiver`: address to receive fee
 
 - `feeRate`: portion of amount to take as fee in 18 decimals
+
+
+
+****
+<br>
+
+*Events*  
+
+
+`Fee(address receiver, address token, uint256 amount)`
+
+
 
 
 

@@ -110,3 +110,10 @@ common interface to define GYSR event system
 
 
 
+
+`Fee(address receiver, address token, uint256 amount)`
+
+
+
+
+

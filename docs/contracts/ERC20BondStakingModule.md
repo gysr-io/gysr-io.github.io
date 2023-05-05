@@ -313,7 +313,7 @@ Returns the Uniform Resource Identifier (URI) for `tokenId` token.
 ****
 <br>
 
-**`_beforeTokenTransfer`**`(address from, address to, uint256 tokenId)` (internal)
+**`_beforeTokenTransfer`**`(address from, address to, uint256 tokenId, uint256)` (internal)
 
 
 

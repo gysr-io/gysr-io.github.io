@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/gysr-io/docs",
   "dependencies": {
-    "@openzeppelin/contracts": "^4.7.3",
+    "@openzeppelin/contracts": "^4.8.3",
     "solc-0.8": "npm:solc@0.8.18",
     "solidity-docgen": "^0.5.13"
   }

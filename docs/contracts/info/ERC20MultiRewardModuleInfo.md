@@ -90,6 +90,60 @@ preview estimated rewards
 ****
 <br>
 
+**`preview`**`(address module, bytes32 account, uint256 start, uint256 end, address[] tokens_) → uint256[] rewards_, uint256[] vesting_` (public)
+
+preview estimated rewards for claim (by index)
+
+
+
+
+*Parameters*  
+- `module`: address of reward module
+
+- `account`: bytes32 account of interest for preview
+
+- `start`: start of claim index range
+
+- `end`: end of claim index range, exclusive
+
+- `tokens_`: reward token addresses
+
+
+*Returns*  
+- rewards_ estimated reward balances
+
+- vesting_ estimated time vesting coeffs weighted by rewards
+
+
+****
+<br>
+
+**`registered`**`(address module, bytes32 account, uint256 start, uint256 end, address[] tokens_) → uint256[][] registered_` (public)
+
+convenience function to get registered accumulators for account
+
+
+
+
+*Parameters*  
+- `module`: address of reward module
+
+- `account`: bytes32 account of interest
+
+- `start`: start of stake index range
+
+- `end`: end of stake index range, exclusive
+
+- `tokens_`: reward token addresses
+
+
+*Returns*  
+- registered_ accumulators for each stake and reward token
+
+
+****
+<br>
+
 **`unlockable`**`(address module, address token) → uint256` (public)
 
 compute reward shares to be unlocked on the next update

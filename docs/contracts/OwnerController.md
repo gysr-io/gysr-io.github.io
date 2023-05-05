@@ -108,8 +108,7 @@ Throws if called by any account other than the controller.
 
 
 
-Transfers ownership of the contract to a new account (`newOwner`). This can
-include renouncing ownership by transferring to the zero address.
+Transfers ownership of the contract to a new account (`newOwner`).
 Can only be called by the current owner.
 
 
