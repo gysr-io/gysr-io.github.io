@@ -235,7 +235,7 @@ open a new bond market
 
 - `price`: minimum and starting price of the bond in tokens
 
-- `coeff`: bond pricing coefficient
+- `coeff`: bond pricing coefficient in price increase per debt shares (24 decimals)
 
 - `max`: maximum size for an individual bond in debt shares
 

@@ -79,7 +79,7 @@ provide the metadata URI for a bond position
 ****
 <br>
 
-**`quote`**`(address module, address token, uint256 amount) → uint256` (external)
+**`quote`**`(address module, address token, uint256 amount) → uint256, bool` (public)
 
 quote the debt share values to be issued for an amount of tokens
 
@@ -94,11 +94,62 @@ quote the debt share values to be issued for an amount of tokens
 - `amount`: number of tokens to be deposited
 
 
+*Returns*  
+- debt estimated debt shares issued
+
+- okay if debt amount is within max size and capacity of market (note: this does not check reward module funding)
+
 
 ****
 <br>
 
-**`returnable`**`(address module, uint256 id, uint256 amount) → uint256` (external)
+**`quote`**`(address module, address token, uint256 amount, address config) → uint256, bool` (external)
+
+quote the debt share values to be issued for an amount of tokens after protocol fees
+
+
+
+
+*Parameters*  
+- `module`: address of bond staking module
+
+- `token`: address of market
+
+- `amount`: number of tokens to be deposited
+
+- `config`: address of configuration contract
+
+
+*Returns*  
+- debt estimated debt shares issued
+
+- okay if debt amount is within max size and capacity of market (note: this does not check reward module funding)
+
+
+****
+<br>
+
+**`price`**`(address module, address token) → uint256` (public)
+
+get current price of debt share (reward token) in specified principal token shares
+
+
+
+
+*Parameters*  
+- `module`: address of bond staking module
+
+- `token`: address of market
+
+
+*Returns*  
+- price current price of reward debt share in principal token shares
+
+
+****
+<br>
+
+**`unstakeable`**`(address module, uint256 id, uint256 amount) → uint256, uint256, bool` (external)
 
 preview amount of deposit to be returned for an unstake
 
@@ -110,7 +161,34 @@ preview amount of deposit to be returned for an unstake
 
 - `id`: bond position identifier
 
-- `amount`: number of tokens to be unstaked
+- `amount`: number of tokens to be unstaked (pass 0 for all)
 
+
+*Returns*  
+- principal token amount returned
+
+- debt shares to be redeemed (possibly not all vested)
+
+- okay if unstake is valid for bond id and principal amount
+
+
+****
+<br>
+
+**`withdrawable`**`(address module, address token) → uint256` (public)
+
+get current vested balance of specified principal token
+
+
+
+
+*Parameters*  
+- `module`: address of bond staking module
+
+- `token`: address of market
+
+
+*Returns*  
+- withdrawable amount of principal token
 
 

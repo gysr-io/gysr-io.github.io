@@ -114,7 +114,9 @@ incentivize longer term staking.
 perform any necessary accounting for new stake
 
 
+stake and register for rewards on specified tokens
 
+`data`: address[] tokens
 
 *Parameters*  
 - `account`: bytes32 id of staking account
@@ -140,7 +142,9 @@ perform any necessary accounting for new stake
 reward user and perform any necessary accounting for unstake
 
 
+unstake and claim/unregister rewards on specified tokens
 
+`data`: address[] tokens (must be ordered)
 
 *Parameters*  
 - `account`: bytes32 id of staking account
@@ -170,9 +174,21 @@ reward user and perform and necessary accounting for existing stake
 
 claim rewards on specified tokens, optionally specify stakes, and optionally deregister
 
+`data`: (bool continue, uint256 start, uint256 end, address[] tokens)
+
+note: encoded token array addresses must be sorted
 
 *Parameters*  
-- `data`: (bool continue, uint256 start, uint256 end, address[] tokens)
+- `account`: bytes32 id of staking account
+
+- `sender`: address of sender
+
+- `receiver`: address of reward receiver
+
+- `shares`: number of shares being claimed against
+
+- `data`: additional data
+
 
 *Returns*  
 - amount of gysr spent
@@ -188,11 +204,18 @@ claim rewards on specified tokens, optionally specify stakes, and optionally der
 method called by anyone to update accounting
 
 
-register for specified rewards token on existing stake
+register or deregister for specified rewards token on existing stake
 
+`data`: (bool register, uint256 start, uint256 end, address[] tokens)
+
+note: encoded token array addresses must be sorted
 
 *Parameters*  
-- `uint256`: start, uint256 end, address[] tokens)
+- `account`: bytes32 id of staking account for update
+
+- `sender`: address of sender
+
+- `data`: additional data
 
 
 
